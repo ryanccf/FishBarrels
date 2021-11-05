@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Gun.gd" type="Script" id=1]
+
+[node name="Gun" type="Node2D"]
+position = Vector2( 23.4118, 104.259 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -6.90667
+margin_top = 3.82132
+margin_right = 6.09333
+margin_bottom = 16.8213
+color = Color( 0.533333, 0.752941, 0.439216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -3.97703
+margin_top = 2.47025
+margin_right = 9.02297
+margin_bottom = 10.4702
+color = Color( 0.533333, 0.752941, 0.439216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = -0.906673
+margin_top = -3.17868
+margin_right = 17.0933
+margin_bottom = 6.82132
+color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+margin_left = 10.0933
+margin_top = -3.17868
+margin_right = 39.0933
+margin_bottom = 3.82132
+color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+margin_left = -4.28328
+margin_top = 16.7229
+margin_right = 3.71672
+margin_bottom = 18.7229
+color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 39.0647, 0.364235 )

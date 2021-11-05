@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Fish.gd" type="Script" id=1]
+
+[node name="Fish" type="Node2D"]
+position = Vector2( 130.752, 132.23 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -8.36859
+margin_top = -2.60145
+margin_right = 9.63141
+margin_bottom = 2.39855
+color = Color( 0.203922, 0.407843, 0.337255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -10.4737
+margin_top = -2.80971
+margin_right = -5.47372
+margin_bottom = 2.19029
+color = Color( 0.533333, 0.752941, 0.439216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = 9.99999
+margin_top = -5.09515
+margin_right = 13.0
+margin_bottom = 3.90485
+color = Color( 0.533333, 0.752941, 0.439216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+margin_right = 3.0
+margin_bottom = 5.0
+color = Color( 0.533333, 0.752941, 0.439216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+margin_left = 0.190285
+margin_top = -7.99201
+margin_right = 3.19028
+margin_bottom = -2.99201
+color = Color( 0.533333, 0.752941, 0.439216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( 1.61743, 8.75316 )
+polygon = PoolVector2Array( -11.5861, -11.7056, -1.94022, -12.0379, -1.27422, -16.6048, 1.38979, -16.5096, 1.77036, -11.8476, 8.24009, -11.467, 8.34746, -13.6623, 11.475, -13.5602, 11.4863, -4.65346, 8.14363, -4.65346, 8.24009, -6.7099, 1.77036, -6.80504, 1.49911, -3.75665, -1.47665, -3.75665, -2.25116, -6.77318, -11.5497, -7.09047 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
