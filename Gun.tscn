@@ -60,4 +60,6 @@ __meta__ = {
 }
 
 [node name="Position2D" type="Position2D" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+show_behind_parent = true
 position = Vector2( 39.0647, 0.364235 )

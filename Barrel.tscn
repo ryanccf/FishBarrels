@@ -1,0 +1,43 @@
+[gd_scene format=2]
+
+[node name="Barrel" type="Node2D"]
+position = Vector2( 0, -0.136383 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 6
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+position = Vector2( -0.588638, -0.294319 )
+polygon = PoolVector2Array( 76.7199, 62.5809, 81.4006, 65.8123, 80.9673, 139.034, 146.755, 138.751, 147.41, 65.4823, 152.031, 62.6219, 152.135, 144.32, 75.8704, 144.037 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 75.8699
+margin_top = 61.9464
+margin_right = 80.8699
+margin_bottom = 143.946
+color = Color( 0.203922, 0.407843, 0.337255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 147.257
+margin_top = 61.8392
+margin_right = 152.257
+margin_bottom = 143.839
+color = Color( 0.203922, 0.407843, 0.337255, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = 76.0
+margin_top = 139.0
+margin_right = 152.0
+margin_bottom = 144.0
+color = Color( 0.203922, 0.407843, 0.337255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

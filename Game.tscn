@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Gun.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Fish.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Barrel.tscn" type="PackedScene" id=4]
 
 [node name="Game" type="Node2D"]
 position = Vector2( 9.86987, 11.1273 )
@@ -141,46 +142,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Barrel" type="Node2D" parent="Background"]
-position = Vector2( 0, -0.136383 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Area2D" type="Area2D" parent="Background/Barrel"]
-collision_mask = 2
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/Barrel/Area2D"]
-visible = false
-position = Vector2( -0.588638, -0.294319 )
-polygon = PoolVector2Array( 76.7199, 62.5809, 81.4006, 65.8123, 80.9673, 139.034, 146.755, 138.751, 147.41, 65.4823, 152.031, 62.6219, 152.135, 144.32, 75.8704, 144.037 )
-
-[node name="ColorRect" type="ColorRect" parent="Background/Barrel"]
-margin_left = 75.8699
-margin_top = 61.9464
-margin_right = 80.8699
-margin_bottom = 143.946
-color = Color( 0.203922, 0.407843, 0.337255, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect2" type="ColorRect" parent="Background/Barrel"]
-margin_left = 147.257
-margin_top = 61.8392
-margin_right = 152.257
-margin_bottom = 143.839
-color = Color( 0.203922, 0.407843, 0.337255, 1 )
-
-[node name="ColorRect3" type="ColorRect" parent="Background/Barrel"]
-margin_left = 76.0
-margin_top = 139.0
-margin_right = 152.0
-margin_bottom = 144.0
-color = Color( 0.203922, 0.407843, 0.337255, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Barrel" parent="Background" instance=ExtResource( 4 )]
 
 [node name="Gun" parent="Background" instance=ExtResource( 2 )]
 position = Vector2( 21.637, 111.32 )
