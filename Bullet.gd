@@ -1,6 +1,10 @@
 extends Node2D
 
-var SPEED = 200
+const UP = Vector2(0, -1)
+const DOWN = Vector2(0, 1)
+const SPEED = 120
+const GRAVITY = 90.8 * DOWN.y
+
 var velocity = 0
 
 func _ready():
@@ -8,14 +12,12 @@ func _ready():
 	position = get_parent().barrel_position()
 	rotation = get_parent().get_rotation()
 	velocity = Vector2(1, 0).rotated(rotation) * SPEED
-	print(velocity)
 
 func _physics_process(delta):
-	$KinematicBody2D.move_and_collide(velocity * delta)
+	velocity.y += GRAVITY * delta
+	$KinematicBody2D.move_and_slide((velocity), UP)
 
 func _on_VisibilityNotifier2D_screen_exited():
-	print("EXITED SCREEEN")
-	print(position)
 	$DeathTimer.start()
 
 func _on_DeathTimer_timeout():

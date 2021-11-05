@@ -9,6 +9,46 @@
 position = Vector2( 9.86987, 11.1273 )
 script = ExtResource( 1 )
 
+[node name="Overlay" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Overlay"]
+margin_left = -9.0
+margin_top = -11.0
+margin_right = 171.0
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Overlay"]
+margin_left = -9.0
+margin_top = -11.0
+margin_bottom = 152.0
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="Overlay"]
+margin_left = -9.46831
+margin_top = 144.0
+margin_right = 170.532
+margin_bottom = 155.0
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="Overlay"]
+margin_left = 160.0
+margin_top = -11.0
+margin_right = 171.0
+margin_bottom = 153.0
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Case" type="Node2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Case"]
@@ -161,43 +201,3 @@ position = Vector2( 94.1679, 99.3665 )
 
 [node name="Fish3" parent="Background" instance=ExtResource( 3 )]
 position = Vector2( 110.411, 128.426 )
-
-[node name="Overlay" type="Node2D" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="Overlay"]
-margin_left = -9.0
-margin_top = -11.0
-margin_right = 171.0
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect2" type="ColorRect" parent="Overlay"]
-margin_left = -9.0
-margin_top = -11.0
-margin_bottom = 152.0
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect4" type="ColorRect" parent="Overlay"]
-margin_left = -9.46831
-margin_top = 144.0
-margin_right = 170.532
-margin_bottom = 155.0
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect3" type="ColorRect" parent="Overlay"]
-margin_left = 160.0
-margin_top = -11.0
-margin_right = 171.0
-margin_bottom = 153.0
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}

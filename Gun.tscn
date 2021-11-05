@@ -63,3 +63,8 @@ __meta__ = {
 modulate = Color( 1, 0, 0, 1 )
 show_behind_parent = true
 position = Vector2( 39.0647, 0.364235 )
+
+[node name="Reload" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="timeout" from="Reload" to="." method="_on_Reload_timeout"]
