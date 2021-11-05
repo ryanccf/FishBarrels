@@ -15,52 +15,43 @@ script = ExtResource( 1 )
 margin_left = -9.0
 margin_top = -11.0
 margin_right = 171.0
+margin_bottom = 253.0
 color = Color( 0.862745, 0.862745, 0.862745, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect2" type="ColorRect" parent="Overlay"]
-margin_left = -9.0
-margin_top = -11.0
-margin_bottom = 152.0
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect4" type="ColorRect" parent="Overlay"]
-margin_left = -9.46831
-margin_top = 144.0
-margin_right = 170.532
-margin_bottom = 155.0
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect3" type="ColorRect" parent="Overlay"]
-margin_left = 160.0
-margin_top = -11.0
-margin_right = 171.0
-margin_bottom = 153.0
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Case" type="Node2D" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="Case"]
-margin_left = -8.78352
-margin_top = -11.4489
-margin_right = 171.216
-margin_bottom = 252.551
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
+[node name="Background" type="ColorRect" parent="."]
+margin_left = 0.0623398
+margin_right = 160.062
+margin_bottom = 144.0
+color = Color( 0.878431, 0.972549, 0.815686, 1 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="Barrel" parent="Background" instance=ExtResource( 4 )]
+
+[node name="Gun" parent="Background" instance=ExtResource( 2 )]
+position = Vector2( 21.637, 111.32 )
+
+[node name="Fish" parent="Background" instance=ExtResource( 3 )]
+position = Vector2( 129.784, 87.2958 )
+
+[node name="Fish5" parent="Background" instance=ExtResource( 3 )]
+position = Vector2( 98.1915, 68.8171 )
+
+[node name="Fish2" parent="Background" instance=ExtResource( 3 )]
+position = Vector2( 131.572, 112.927 )
+
+[node name="Fish4" parent="Background" instance=ExtResource( 3 )]
+position = Vector2( 94.1679, 99.3665 )
+
+[node name="Fish3" parent="Background" instance=ExtResource( 3 )]
+position = Vector2( 110.411, 128.426 )
+
+[node name="Case" type="Node2D" parent="."]
 
 [node name="Dpad" type="ColorRect" parent="Case"]
 margin_left = 22.2286
@@ -172,32 +163,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="ColorRect" parent="."]
-margin_left = 0.0623398
-margin_right = 160.062
-margin_bottom = 144.0
-color = Color( 0.878431, 0.972549, 0.815686, 1 )
+[node name="Frame3" type="ColorRect" parent="Case"]
+margin_left = -9.0
+margin_top = -11.0
+margin_right = 171.0
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Barrel" parent="Background" instance=ExtResource( 4 )]
+[node name="Frame2" type="ColorRect" parent="Case"]
+margin_left = -9.0
+margin_top = -11.0
+margin_bottom = 152.0
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Gun" parent="Background" instance=ExtResource( 2 )]
-position = Vector2( 21.637, 111.32 )
+[node name="Frame" type="ColorRect" parent="Case"]
+margin_left = -9.46831
+margin_top = 144.0
+margin_right = 170.532
+margin_bottom = 155.0
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Fish" parent="Background" instance=ExtResource( 3 )]
-position = Vector2( 129.784, 87.2958 )
-
-[node name="Fish5" parent="Background" instance=ExtResource( 3 )]
-position = Vector2( 98.1915, 68.8171 )
-
-[node name="Fish2" parent="Background" instance=ExtResource( 3 )]
-position = Vector2( 131.572, 112.927 )
-
-[node name="Fish4" parent="Background" instance=ExtResource( 3 )]
-position = Vector2( 94.1679, 99.3665 )
-
-[node name="Fish3" parent="Background" instance=ExtResource( 3 )]
-position = Vector2( 110.411, 128.426 )
+[node name="Frame4" type="ColorRect" parent="Case"]
+margin_left = 160.0
+margin_top = -11.0
+margin_right = 171.0
+margin_bottom = 153.0
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
