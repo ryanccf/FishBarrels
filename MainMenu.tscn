@@ -1,21 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://Gun.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Fish.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Barrel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Mario-Kart-DS.ttf" type="DynamicFontData" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 98.8533, 7.78983 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 6.21933, 83.2109 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 96.4153, 6.86581 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 6.98723, 91.6564 )
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 2 )
 
 [node name="Game" type="Node2D"]
 position = Vector2( 9.86987, 11.1273 )
@@ -43,28 +33,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Barrel" parent="Background" instance=ExtResource( 4 )]
-
-[node name="Gun" parent="Background" instance=ExtResource( 2 )]
-position = Vector2( 21.637, 111.32 )
-
-[node name="Fish" parent="Background" instance=ExtResource( 3 )]
-position = Vector2( 129.784, 87.2958 )
-
-[node name="Fish5" parent="Background" instance=ExtResource( 3 )]
-position = Vector2( 98.1915, 68.8171 )
-
-[node name="Fish2" parent="Background" instance=ExtResource( 3 )]
-position = Vector2( 131.572, 112.927 )
-
-[node name="Fish4" parent="Background" instance=ExtResource( 3 )]
-position = Vector2( 94.1679, 99.3665 )
-
-[node name="Fish3" parent="Background" instance=ExtResource( 3 )]
-position = Vector2( 110.411, 128.426 )
+[node name="Label2" type="Label" parent="Background"]
+anchor_left = -0.0024231
+anchor_top = 0.00269254
+anchor_right = -0.0024231
+anchor_bottom = 0.00269254
+margin_left = -65.1352
+margin_top = -17.9978
+margin_right = 228.865
+margin_bottom = 60.0022
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+text = "FishBarrels"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Case" type="Node2D" parent="."]
-z_index = 5
+visible = false
 
 [node name="Dpad" type="ColorRect" parent="Case"]
 margin_left = 22.2286
@@ -185,12 +174,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Area2D" type="Area2D" parent="Case/Frame3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Case/Frame3/Area2D"]
-position = Vector2( 92.5761, 3.30908 )
-shape = SubResource( 1 )
-
 [node name="Frame2" type="ColorRect" parent="Case"]
 margin_left = -9.0
 margin_top = -11.0
@@ -199,14 +182,6 @@ color = Color( 0.862745, 0.862745, 0.862745, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Area2D" type="Area2D" parent="Case/Frame2"]
-collision_layer = 8
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Case/Frame2/Area2D"]
-position = Vector2( 2.71478, 82.6698 )
-shape = SubResource( 2 )
 
 [node name="Frame" type="ColorRect" parent="Case"]
 margin_left = -9.46831
@@ -218,13 +193,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Area2D" type="Area2D" parent="Case/Frame"]
-collision_layer = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Case/Frame/Area2D"]
-position = Vector2( 86.4133, 6.8363 )
-shape = SubResource( 3 )
-
 [node name="Frame4" type="ColorRect" parent="Case"]
 margin_left = 160.0
 margin_top = -11.0
@@ -234,16 +202,3 @@ color = Color( 0.862745, 0.862745, 0.862745, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Area2D" type="Area2D" parent="Case/Frame4"]
-collision_layer = 8
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Case/Frame4/Area2D"]
-position = Vector2( 7.02846, 88.1529 )
-shape = SubResource( 4 )
-
-[connection signal="body_entered" from="Case/Frame3/Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Case/Frame2/Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Case/Frame/Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Case/Frame4/Area2D" to="." method="_on_Area2D_body_entered"]

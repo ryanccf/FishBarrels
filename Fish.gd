@@ -31,16 +31,29 @@ func check_facing():
 
 func toggle_facing():
 	facing *= -1
-	if facing == 1:
-		var FLIP_X = Transform2D(Vector2(-1, 0), Vector2(0, 1), Vector2(0, 0))
-		var last_position = position
-		transform = FLIP_X
-		position = last_position
-	else:
-		var FLIP_X = Transform2D(Vector2(1, 0), Vector2(0, 1), Vector2(0, 0))
-		var last_position = position
-		transform = FLIP_X
-		position = last_position
+	transform = Transform2D(Vector2(transform.x.x * -1, 0), Vector2(0, 1), transform.origin)
+	#Identity transform:
+	#transform = Transform2D(Vector2(1, 0), Vector2(0, 1), transform.origin)
+	#Rotate 45 degrees:
+	#var angle = 	rng.randf_range(0, 2)*PI
+	#transform = Transform2D(Vector2(cos(angle), sin(angle)), Vector2(-sin(angle), cos(angle)), transform.origin)
+
+	
+#	if facing == 1:
+#		transform = Transform2D(Vector2(transform.x.x * -1, 0), Vector2(0, 1), Vector2(0, 0)
+#		var last_position = position
+#		transform = FLIP_X
+#		position = last_position
+#	else:
+#		var FLIP_X = Transform2D(Vector2(1, 0), Vector2(0, 1), Vector2(0, 0))
+#		var last_position = position
+#		transform = FLIP_X
+#		position = last_position
 
 func _on_Area2D_area_entered(area):
 	toggle_facing()
+
+
+func _on_Area2D_body_entered(body):
+	queue_free()
+	body.get_parent().queue_free()

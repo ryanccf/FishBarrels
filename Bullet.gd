@@ -15,10 +15,8 @@ func _ready():
 
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
-	$KinematicBody2D.move_and_slide((velocity), UP)
-
-func _on_VisibilityNotifier2D_screen_exited():
-	$DeathTimer.start()
-
-func _on_DeathTimer_timeout():
-	queue_free()
+	$KinematicBody2D.move_and_slide(velocity)
+#	print($KinematicBody2D.get_slide_count())
+#	for i in $KinematicBody2D.get_slide_count():
+#		var collider_name = $KinematicBody2D.get_slide_collision(i).collider.name
+#		print(collider_name)	
