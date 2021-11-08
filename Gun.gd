@@ -4,6 +4,7 @@ var gun_angle = 0
 var hand_shakiness = 0
 var ready_to_fire = true
 
+
 func move_hand(delta):
 	hand_shakiness += delta * 1.123
 	gun_angle += delta
