@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Gun.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Fish.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Barrel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Score.gd" type="Script" id=5]
+[ext_resource path="res://GameTimer.gd" type="Script" id=6]
+[ext_resource path="res://Time.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Mario-Kart-DS.ttf"
@@ -53,7 +55,6 @@ z_index = 0
 
 [node name="Gun" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 21.6993, 111.32 )
-scale = Vector2( 1, 1 )
 z_as_relative = false
 
 [node name="Fish" parent="Playfield" instance=ExtResource( 3 )]
@@ -80,6 +81,19 @@ margin_bottom = 24.0
 custom_fonts/font = SubResource( 2 )
 text = "0"
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="Playfield"]
+modulate = Color( 0.203922, 0.407843, 0.337255, 1 )
+margin_left = 116.0
+margin_top = 1.0
+margin_right = 151.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -277,7 +291,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+script = ExtResource( 6 )
+
 [connection signal="body_entered" from="Case/Frame3/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Case/Frame2/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Case/Frame/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Case/Frame4/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]

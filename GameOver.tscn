@@ -1,44 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Mario-Kart-DS.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://barrel.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
 font_data = ExtResource( 2 )
-
-[sub_resource type="Animation" id=2]
-resource_name = "main"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -80, 159.877 ), Vector2( 60.2703, 159.877 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "main"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -60, 166 ), Vector2( 95, 159.877 ) ]
-}
 
 [node name="GameOver" type="Node2D"]
 position = Vector2( 9.86987, 11.1273 )
@@ -85,23 +53,58 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label3" type="Label" parent="Background"]
+anchor_left = -0.0024231
+anchor_top = 0.00269254
+anchor_right = -0.0024231
+anchor_bottom = 0.00269254
+margin_left = -67.6123
+margin_top = 67.1796
+margin_right = 230.388
+margin_bottom = 145.18
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+text = "Fish:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="numfish" type="Label" parent="Background"]
+anchor_left = -0.0024231
+anchor_top = 0.00269254
+anchor_right = -0.0024231
+anchor_bottom = 0.00269254
+margin_left = -67.1796
+margin_top = 34.2693
+margin_right = 230.821
+margin_bottom = 112.269
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="BarrelProp" type="Sprite" parent="Background"]
-position = Vector2( -8.58041, 96.2771 )
+position = Vector2( 3.9578, 82.6941 )
 scale = Vector2( 1.18743, 1.18743 )
 texture = ExtResource( 4 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/BarrelProp"]
-autoplay = "main"
-anims/main = SubResource( 2 )
+[node name="BarrelProp3" type="Sprite" parent="Background"]
+position = Vector2( -23.2083, 128.145 )
+scale = Vector2( 1.18743, 1.18743 )
+texture = ExtResource( 4 )
 
 [node name="BarrelProp2" type="Sprite" parent="Background"]
-position = Vector2( 167.367, 95.2344 )
+position = Vector2( 165.166, 89.2035 )
 scale = Vector2( 1.18743, 1.18743 )
 texture = ExtResource( 4 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/BarrelProp2"]
-autoplay = "main"
-anims/main = SubResource( 3 )
 
 [node name="Case" type="Node2D" parent="."]
 position = Vector2( 2.86102e-06, 3.8147e-06 )
