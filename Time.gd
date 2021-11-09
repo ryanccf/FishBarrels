@@ -4,7 +4,7 @@ func _ready():
 	update_score()
 
 func update_score():
-	text = str(ceil(get_parent().get_parent().get_node("GameTimer").time_left))
+	text = str(ceil(global.get_time()))
 
 func _process(delta):
 	update_score()

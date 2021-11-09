@@ -1,5 +1,7 @@
 extends Node2D
 
+const TIMEINCREASE = 5
+
 var rng = RandomNumberGenerator.new()
 
 var swim_max = 300
@@ -56,5 +58,6 @@ func _on_Area2D_area_entered(area):
 
 func _on_Area2D_body_entered(body):
 	global.add_fish()
+	global.add_time(TIMEINCREASE)
 	queue_free()
 	body.get_parent().queue_free()

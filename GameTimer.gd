@@ -1,9 +1,7 @@
 extends Timer
 
 func _ready():
-	pass # Replace with function body.
+	global.gametimer = self
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(_delta):
+	global.set_time(time_left)
