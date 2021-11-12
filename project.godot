@@ -20,9 +20,11 @@ global="*res://global.gd"
 
 [display]
 
-window/size/width=180
+window/size/width=200
 window/size/height=264
-window/size/resizable=false
+window/handheld/orientation="portrait"
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [global]
 

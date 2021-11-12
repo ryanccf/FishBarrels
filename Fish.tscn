@@ -10,6 +10,8 @@ gravity = Vector3( 0, -98, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 angle = 180.0
+scale = 2.0
+scale_random = 1.0
 
 [node name="Fish" type="Node2D"]
 position = Vector2( 136.425, 133.513 )
@@ -78,7 +80,7 @@ modulate = Color( 0.878431, 0.972549, 0.815686, 1 )
 show_behind_parent = true
 position = Vector2( -11.2118, -2.90425 )
 z_index = -1
-amount = 4
+lifetime = 2.0
 speed_scale = 0.18
 explosiveness = 0.4
 randomness = 1.0

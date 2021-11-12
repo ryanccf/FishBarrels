@@ -74,10 +74,10 @@ position = Vector2( 110.473, 128.426 )
 
 [node name="Score" type="Label" parent="Playfield"]
 modulate = Color( 0.203922, 0.407843, 0.337255, 1 )
-margin_left = 6.06234
-margin_top = 4.0
-margin_right = 73.0623
-margin_bottom = 24.0
+margin_left = 4.22137
+margin_top = 1.02753
+margin_right = 71.2213
+margin_bottom = 21.0275
 custom_fonts/font = SubResource( 2 )
 text = "0"
 script = ExtResource( 5 )
@@ -87,12 +87,13 @@ __meta__ = {
 
 [node name="Time" type="Label" parent="Playfield"]
 modulate = Color( 0.203922, 0.407843, 0.337255, 1 )
-margin_left = 116.0
-margin_top = 1.0
-margin_right = 151.0
-margin_bottom = 21.0
+margin_left = 83.194
+margin_top = 1.32013
+margin_right = 157.194
+margin_bottom = 21.3201
 custom_fonts/font = SubResource( 2 )
 text = "0"
+align = 2
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false

@@ -21,3 +21,4 @@ func set_time(new_time):
 
 func add_time(more_time):
 	gametimer.start(time + more_time)
+	
