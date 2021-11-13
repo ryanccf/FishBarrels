@@ -1,85 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Mario-Kart-DS.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://dirtyharry.png" type="Texture" id=3]
-[ext_resource path="res://barrel.png" type="Texture" id=4]
-
-[sub_resource type="DynamicFont" id=1]
-size = 20
-font_data = ExtResource( 2 )
-
-[sub_resource type="Animation" id=2]
-resource_name = "main"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 228, 80 ), Vector2( 97, 105 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 3.4822 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 2, 2 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -8.2, 7.0 ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "main"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -80, 159.877 ), Vector2( 60.2703, 159.877 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "main"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -60, 166 ), Vector2( 95, 159.877 ) ]
-}
+[ext_resource path="res://TitleAnimation.tscn" type="PackedScene" id=2]
 
 [node name="MainMenu" type="MarginContainer"]
 anchor_right = 1.0
@@ -252,63 +174,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Background" type="ColorRect" parent="GridContainer2/VBoxContainer/Control"]
-margin_right = 160.0
-margin_bottom = 144.0
-rect_min_size = Vector2( 160, 144 )
-color = Color( 0.878431, 0.972549, 0.815686, 1 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="GridContainer2/VBoxContainer/Control/Background"]
-anchor_left = -0.0024231
-anchor_top = 0.00269254
-anchor_right = -0.0024231
-anchor_bottom = 0.00269254
-margin_left = -65.6123
-margin_top = -18.3877
-margin_right = 232.388
-margin_bottom = 59.6123
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-text = "Fish   Barrels"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="GridContainer2/VBoxContainer/Control/Background"]
-position = Vector2( 96.277, 105 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="GridContainer2/VBoxContainer/Control/Background/Sprite"]
-autoplay = "main"
-method_call_mode = 1
-anims/main = SubResource( 2 )
-
-[node name="BarrelProp" type="Sprite" parent="GridContainer2/VBoxContainer/Control/Background"]
-position = Vector2( -80, 159.877 )
-scale = Vector2( 1.18743, 1.18743 )
-texture = ExtResource( 4 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="GridContainer2/VBoxContainer/Control/Background/BarrelProp"]
-autoplay = "main"
-anims/main = SubResource( 3 )
-
-[node name="BarrelProp2" type="Sprite" parent="GridContainer2/VBoxContainer/Control/Background"]
-position = Vector2( 85, 159.877 )
-scale = Vector2( 1.18743, 1.18743 )
-texture = ExtResource( 4 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="GridContainer2/VBoxContainer/Control/Background/BarrelProp2"]
-autoplay = "main"
-anims/main = SubResource( 4 )
+[node name="Background" parent="GridContainer2/VBoxContainer/Control" instance=ExtResource( 2 )]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GridContainer2/VBoxContainer"]
 margin_top = 148.0
