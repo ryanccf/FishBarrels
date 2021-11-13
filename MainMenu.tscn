@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Mario-Kart-DS.ttf" type="DynamicFontData" id=2]
@@ -81,43 +81,34 @@ tracks/0/keys = {
 "values": [ Vector2( -60, 166 ), Vector2( 95, 159.877 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 98.8533, 7.78983 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 6.21933, 83.2109 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 96.4153, 6.86581 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 6.98723, 91.6564 )
-
-[node name="MainMenu" type="Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+[node name="MainMenu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.5236
+margin_top = 19.4764
+margin_right = -19.4764
+margin_bottom = -20.5236
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="GameBoyBody" type="Control" parent="."]
-anchor_left = 0.2
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -40.0
-margin_bottom = -40.0
+visible = false
+margin_right = 160.0
+margin_bottom = 224.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Node2D" type="Node2D" parent="GameBoyBody"]
-z_index = 100
+z_index = -1
 
 [node name="BezelBottom" type="ColorRect" parent="GameBoyBody/Node2D"]
 anchor_left = 1.0
@@ -169,9 +160,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 79.575
+margin_left = 79.1301
 margin_top = -500.0
-margin_right = 1079.57
+margin_right = 1079.12
 margin_bottom = 500.0
 rect_min_size = Vector2( 50, 50 )
 color = Color( 0.862745, 0.862745, 0.862745, 1 )
@@ -179,22 +170,100 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="ColorRect" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -80.0
-margin_top = -113.0
-margin_right = 79.9996
-margin_bottom = 72.4353
-color = Color( 0.878431, 0.972549, 0.815686, 1 )
+[node name="Bezel" type="CanvasLayer" parent="."]
+layer = 128
+offset = Vector2( -160, 0 )
+transform = Transform2D( 1, 0, 0, 1, -160, 0 )
+
+[node name="Interface" type="Control" parent="."]
+visible = false
+margin_right = 160.0
+margin_bottom = 224.0
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="Background"]
+[node name="DPad" type="Control" parent="Interface"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Interface/DPad"]
+margin_left = 16.4289
+margin_top = -2.73816
+margin_right = 31.4289
+margin_bottom = 36.2618
+color = Color( 0.121569, 0.121569, 0.121569, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Interface/DPad"]
+margin_left = 1.82146
+margin_top = 9.82146
+margin_right = 45.8215
+margin_bottom = 24.8215
+color = Color( 0.121569, 0.121569, 0.121569, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="Interface/DPad"]
+z_index = 128
+
+[node name="Control" type="Control" parent="."]
+visible = false
+margin_right = 160.0
+margin_bottom = 224.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer2" type="GridContainer" parent="."]
+margin_right = 160.0
+margin_bottom = 224.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer2"]
+margin_right = 160.0
+margin_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Control" type="HBoxContainer" parent="GridContainer2/VBoxContainer"]
+margin_right = 160.0
+margin_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Game" type="Node2D" parent="GridContainer2/VBoxContainer/Control"]
+position = Vector2( 81.0242, 73.7187 )
+z_index = -2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Background" type="ColorRect" parent="GridContainer2/VBoxContainer/Control"]
+margin_right = 160.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 160, 144 )
+color = Color( 0.878431, 0.972549, 0.815686, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="GridContainer2/VBoxContainer/Control/Background"]
 anchor_left = -0.0024231
 anchor_top = 0.00269254
 anchor_right = -0.0024231
@@ -213,384 +282,61 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Background"]
+[node name="Sprite" type="Sprite" parent="GridContainer2/VBoxContainer/Control/Background"]
 position = Vector2( 96.277, 105 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Sprite"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GridContainer2/VBoxContainer/Control/Background/Sprite"]
 autoplay = "main"
 method_call_mode = 1
 anims/main = SubResource( 2 )
 
-[node name="BarrelProp" type="Sprite" parent="Background"]
+[node name="BarrelProp" type="Sprite" parent="GridContainer2/VBoxContainer/Control/Background"]
 position = Vector2( -80, 159.877 )
 scale = Vector2( 1.18743, 1.18743 )
 texture = ExtResource( 4 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/BarrelProp"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GridContainer2/VBoxContainer/Control/Background/BarrelProp"]
 autoplay = "main"
 anims/main = SubResource( 3 )
 
-[node name="BarrelProp2" type="Sprite" parent="Background"]
+[node name="BarrelProp2" type="Sprite" parent="GridContainer2/VBoxContainer/Control/Background"]
 position = Vector2( 85, 159.877 )
 scale = Vector2( 1.18743, 1.18743 )
 texture = ExtResource( 4 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/BarrelProp2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GridContainer2/VBoxContainer/Control/Background/BarrelProp2"]
 autoplay = "main"
 anims/main = SubResource( 4 )
 
-[node name="Case" type="Node2D" parent="."]
-visible = false
-position = Vector2( 2.86102e-06, 3.8147e-06 )
-z_index = 5
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer2/VBoxContainer"]
+margin_top = 148.0
+margin_right = 160.0
+margin_bottom = 224.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Frame" type="ColorRect" parent="Case"]
-margin_left = -9.0
-margin_top = 144.0
-margin_right = 171.0
-margin_bottom = 235.0
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
+[node name="2" type="Button" parent="GridContainer2/VBoxContainer/HBoxContainer"]
+margin_right = 78.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Dpad" type="ColorRect" parent="Case"]
-margin_left = 22.2286
-margin_top = 168.717
-margin_right = 38.2286
-margin_bottom = 184.717
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
+[node name="Button2" type="Button" parent="GridContainer2/VBoxContainer/HBoxContainer"]
+margin_left = 82.0
+margin_right = 160.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Dpad2" type="ColorRect" parent="Case"]
-margin_left = 22.4318
-margin_top = 184.775
-margin_right = 38.4318
-margin_bottom = 200.775
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Dpad5" type="ColorRect" parent="Case"]
-margin_left = 22.2285
-margin_top = 200.223
-margin_right = 38.2285
-margin_bottom = 216.223
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Dpad4" type="ColorRect" parent="Case"]
-margin_left = 6.27217
-margin_top = 184.674
-margin_right = 22.2722
-margin_bottom = 200.674
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Dpad3" type="ColorRect" parent="Case"]
-margin_left = 37.4898
-margin_top = 184.08
-margin_right = 53.4898
-margin_bottom = 200.08
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Start" type="ColorRect" parent="Case"]
-margin_left = 53.4136
-margin_top = 225.346
-margin_right = 73.4136
-margin_bottom = 232.346
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Start2" type="ColorRect" parent="Case"]
-margin_left = 57.4136
-margin_top = 221.346
-margin_right = 77.4136
-margin_bottom = 228.346
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Start3" type="ColorRect" parent="Case"]
-margin_left = 82.4136
-margin_top = 225.346
-margin_right = 102.414
-margin_bottom = 232.346
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Start4" type="ColorRect" parent="Case"]
-margin_left = 86.4136
-margin_top = 221.346
-margin_right = 106.414
-margin_bottom = 228.346
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="ColorRect" parent="Case"]
-margin_left = 110.026
-margin_top = 178.436
-margin_right = 127.026
-margin_bottom = 195.436
-color = Color( 0.815686, 0.243137, 0.439216, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button2" type="ColorRect" parent="Case"]
-margin_left = 134.433
-margin_top = 165.719
-margin_right = 151.433
-margin_bottom = 182.719
-color = Color( 0.815686, 0.243137, 0.439216, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Frame3" type="ColorRect" parent="Case"]
-margin_left = 1.0
-margin_top = -3.5629
-margin_right = 181.0
-margin_bottom = 7.43713
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Frame2" type="ColorRect" parent="Case"]
-margin_left = 1.0
-margin_top = -4.0
-margin_right = 10.0
-margin_bottom = 159.0
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Frame4" type="ColorRect" parent="Case"]
-margin_left = 170.0
-margin_top = -4.0
-margin_right = 181.0
-margin_bottom = 160.0
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Bezel" type="CanvasLayer" parent="."]
-layer = 128
-offset = Vector2( -160, 0 )
-transform = Transform2D( 1, 0, 0, 1, -160, 0 )
-
-[node name="LeftInput" type="Control" parent="."]
-visible = false
-anchor_right = 1.0
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Case" type="Node2D" parent="LeftInput"]
-z_index = 5
-
-[node name="Dpad" type="ColorRect" parent="LeftInput/Case"]
-margin_left = 22.2286
-margin_top = 168.717
-margin_right = 38.2286
-margin_bottom = 184.717
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Dpad2" type="ColorRect" parent="LeftInput/Case"]
-margin_left = 22.4318
-margin_top = 184.775
-margin_right = 38.4318
-margin_bottom = 200.775
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Dpad5" type="ColorRect" parent="LeftInput/Case"]
-margin_left = 22.2285
-margin_top = 200.223
-margin_right = 38.2285
-margin_bottom = 216.223
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Dpad4" type="ColorRect" parent="LeftInput/Case"]
-margin_left = 6.27217
-margin_top = 184.674
-margin_right = 22.2722
-margin_bottom = 200.674
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Dpad3" type="ColorRect" parent="LeftInput/Case"]
-margin_left = 37.4898
-margin_top = 184.08
-margin_right = 53.4898
-margin_bottom = 200.08
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Start" type="ColorRect" parent="LeftInput/Case"]
-margin_left = 53.4136
-margin_top = 225.346
-margin_right = 73.4136
-margin_bottom = 232.346
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Start2" type="ColorRect" parent="LeftInput/Case"]
-margin_left = 57.4136
-margin_top = 221.346
-margin_right = 77.4136
-margin_bottom = 228.346
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Start3" type="ColorRect" parent="LeftInput/Case"]
-margin_left = 82.4136
-margin_top = 225.346
-margin_right = 102.414
-margin_bottom = 232.346
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Start4" type="ColorRect" parent="LeftInput/Case"]
-margin_left = 86.4136
-margin_top = 221.346
-margin_right = 106.414
-margin_bottom = 228.346
-color = Color( 0.258824, 0.258824, 0.258824, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="ColorRect" parent="LeftInput/Case"]
-margin_left = 110.026
-margin_top = 178.436
-margin_right = 127.026
-margin_bottom = 195.436
-color = Color( 0.815686, 0.243137, 0.439216, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button2" type="ColorRect" parent="LeftInput/Case"]
-margin_left = 134.433
-margin_top = 165.719
-margin_right = 151.433
-margin_bottom = 182.719
-color = Color( 0.815686, 0.243137, 0.439216, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Frame3" type="ColorRect" parent="LeftInput/Case"]
-margin_left = -9.0
-margin_top = -11.0
-margin_right = 171.0
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Area2D" type="Area2D" parent="LeftInput/Case/Frame3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftInput/Case/Frame3/Area2D"]
-position = Vector2( 92.5761, 3.30908 )
-shape = SubResource( 5 )
-
-[node name="Frame2" type="ColorRect" parent="LeftInput/Case"]
-margin_left = -9.0
-margin_top = -11.0
-margin_bottom = 152.0
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Area2D" type="Area2D" parent="LeftInput/Case/Frame2"]
-collision_layer = 8
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftInput/Case/Frame2/Area2D"]
-position = Vector2( 2.71478, 82.6698 )
-shape = SubResource( 6 )
-
-[node name="Frame" type="ColorRect" parent="LeftInput/Case"]
-margin_left = -9.46831
-margin_top = 144.0
-margin_right = 170.532
-margin_bottom = 155.0
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Area2D" type="Area2D" parent="LeftInput/Case/Frame"]
-collision_layer = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftInput/Case/Frame/Area2D"]
-position = Vector2( 86.4133, 6.8363 )
-shape = SubResource( 7 )
-
-[node name="Frame4" type="ColorRect" parent="LeftInput/Case"]
-margin_left = 160.0
-margin_top = -11.0
-margin_right = 171.0
-margin_bottom = 153.0
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Area2D" type="Area2D" parent="LeftInput/Case/Frame4"]
-collision_layer = 8
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftInput/Case/Frame4/Area2D"]
-position = Vector2( 7.02846, 88.1529 )
-shape = SubResource( 8 )
-
-[node name="RightInput" type="Control" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
