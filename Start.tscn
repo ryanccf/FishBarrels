@@ -1,10 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://MainMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://barrel.png" type="Texture" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 
 [node name="Start" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -18,3 +24,49 @@ __meta__ = {
 }
 
 [node name="MainMenu" parent="." instance=ExtResource( 1 )]
+margin_top = 19.4007
+margin_bottom = -20.5993
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -48.1513
+margin_top = 177.967
+margin_right = -8.15128
+margin_bottom = 217.967
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="Control"]
+position = Vector2( 21.9569, 23.4978 )
+z_index = 101
+
+[node name="TextureButton" type="TextureButton" parent="Control/Node2D"]
+margin_left = -34.6689
+margin_top = -43.5287
+margin_right = 31.3311
+margin_bottom = 35.4713
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control2" type="Control" parent="."]
+margin_left = 29.8383
+margin_top = 186.904
+margin_right = 69.8383
+margin_bottom = 226.904
+
+[node name="Node2D" type="Node2D" parent="Control2"]
+z_index = 101
+
+[node name="TextureButton" type="TextureButton" parent="Control2/Node2D"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

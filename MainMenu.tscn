@@ -1,15 +1,19 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://TitleAnimation.tscn" type="PackedScene" id=2]
+[ext_resource path="res://dirtyharry.png" type="Texture" id=3]
+[ext_resource path="res://barrel.png" type="Texture" id=4]
 
-[node name="MainMenu" type="MarginContainer"]
+[node name="MainMenu" type="GridContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 20.5236
-margin_top = 19.4764
-margin_right = -19.4764
-margin_bottom = -20.5236
+margin_left = 21.4173
+margin_top = 19.0295
+margin_right = -18.5827
+margin_bottom = -20.9705
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 1 )
@@ -17,139 +21,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GameBoyBody" type="Control" parent="."]
-visible = false
-margin_right = 160.0
-margin_bottom = 224.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Node2D" type="Node2D" parent="GameBoyBody"]
-z_index = -1
-
-[node name="BezelBottom" type="ColorRect" parent="GameBoyBody/Node2D"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -500.0
-margin_top = 72.0
-margin_right = 500.0
-margin_bottom = 1072.0
-rect_min_size = Vector2( 50, 50 )
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BezelTop" type="ColorRect" parent="GameBoyBody/Node2D"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -500.0
-margin_top = -1072.0
-margin_right = 500.0
-margin_bottom = -72.0
-rect_min_size = Vector2( 50, 50 )
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BezelLeft" type="ColorRect" parent="GameBoyBody/Node2D"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -1080.0
-margin_top = -500.0
-margin_right = -80.0
-margin_bottom = 500.0
-rect_min_size = Vector2( 50, 50 )
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BezelRight" type="ColorRect" parent="GameBoyBody/Node2D"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 79.1301
-margin_top = -500.0
-margin_right = 1079.12
-margin_bottom = 500.0
-rect_min_size = Vector2( 50, 50 )
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Bezel" type="CanvasLayer" parent="."]
-layer = 128
-offset = Vector2( -160, 0 )
-transform = Transform2D( 1, 0, 0, 1, -160, 0 )
-
-[node name="Interface" type="Control" parent="."]
-visible = false
-margin_right = 160.0
-margin_bottom = 224.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="DPad" type="Control" parent="Interface"]
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="Interface/DPad"]
-margin_left = 16.4289
-margin_top = -2.73816
-margin_right = 31.4289
-margin_bottom = 36.2618
-color = Color( 0.121569, 0.121569, 0.121569, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect2" type="ColorRect" parent="Interface/DPad"]
-margin_left = 1.82146
-margin_top = 9.82146
-margin_right = 45.8215
-margin_bottom = 24.8215
-color = Color( 0.121569, 0.121569, 0.121569, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Node2D" type="Node2D" parent="Interface/DPad"]
-z_index = 128
-
-[node name="Control" type="Control" parent="."]
-visible = false
-margin_right = 160.0
-margin_bottom = 224.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GridContainer2" type="GridContainer" parent="."]
-margin_right = 160.0
-margin_bottom = 224.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 160.0
 margin_bottom = 224.0
 grow_horizontal = 2
@@ -158,7 +30,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 2
 
-[node name="Control" type="HBoxContainer" parent="GridContainer2/VBoxContainer"]
+[node name="Control" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 160.0
 margin_bottom = 144.0
 grow_horizontal = 2
@@ -167,42 +39,49 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Game" type="Node2D" parent="GridContainer2/VBoxContainer/Control"]
+[node name="Game" type="Node2D" parent="VBoxContainer/Control"]
 position = Vector2( 81.0242, 73.7187 )
 z_index = -2
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Background" parent="GridContainer2/VBoxContainer/Control" instance=ExtResource( 2 )]
+[node name="Background" parent="VBoxContainer/Control" instance=ExtResource( 2 )]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer2/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 148.0
 margin_right = 160.0
 margin_bottom = 224.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+alignment = 2
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="2" type="Button" parent="GridContainer2/VBoxContainer/HBoxContainer"]
+[node name="2" type="Control" parent="VBoxContainer/HBoxContainer"]
 margin_right = 78.0
 margin_bottom = 76.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "2"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Button2" type="Button" parent="GridContainer2/VBoxContainer/HBoxContainer"]
+[node name="Node2D" type="Node2D" parent="VBoxContainer/HBoxContainer/2"]
+
+[node name="a_button" type="Control" parent="VBoxContainer/HBoxContainer"]
 margin_left = 82.0
 margin_right = 160.0
 margin_bottom = 76.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "3"
+
+[node name="Node2D" type="Node2D" parent="VBoxContainer/HBoxContainer/a_button"]
+position = Vector2( 53.2251, 17.1157 )
+scale = Vector2( 0.4, 0.4 )
+z_index = 101
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/a_button/Node2D"]
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
