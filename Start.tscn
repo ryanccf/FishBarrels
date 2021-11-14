@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://MainMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://onscreenControls/Sprites/flatLight/flatLight01.png" type="Texture" id=2]
@@ -27,6 +27,8 @@
 [ext_resource path="res://AButton.gd" type="Script" id=25]
 [ext_resource path="res://DPadRight.gd" type="Script" id=26]
 [ext_resource path="res://DPadUp.gd" type="Script" id=27]
+[ext_resource path="res://click3.wav" type="AudioStream" id=28]
+[ext_resource path="res://click4.wav" type="AudioStream" id=29]
 
 [node name="Start" type="Control"]
 anchor_right = 1.0
@@ -68,22 +70,16 @@ __meta__ = {
 scale = Vector2( 0.3, 0.3 )
 z_index = 101
 
-[node name="TextureButton" type="TextureButton" parent="DPadUp/Node2D"]
-margin_left = 3.08616
-margin_top = 5.71906
-margin_right = 64.0862
-margin_bottom = 81.7191
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TouchButton" type="TouchScreenButton" parent="DPadUp/Node2D"]
+normal = ExtResource( 3 )
+pressed = ExtResource( 2 )
+passby_press = true
 
 [node name="ButtonDown" type="AudioStreamPlayer" parent="DPadUp"]
-stream = ExtResource( 18 )
+stream = ExtResource( 28 )
 
 [node name="ButtonUp" type="AudioStreamPlayer" parent="DPadUp"]
-stream = ExtResource( 19 )
+stream = ExtResource( 29 )
 
 [node name="DPadRight" type="Control" parent="."]
 margin_left = 43.0
@@ -101,14 +97,10 @@ __meta__ = {
 scale = Vector2( 0.3, 0.3 )
 z_index = 101
 
-[node name="TextureButton" type="TextureButton" parent="DPadRight/Node2D"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TouchButton" type="TouchScreenButton" parent="DPadRight/Node2D"]
+normal = ExtResource( 9 )
+pressed = ExtResource( 7 )
+passby_press = true
 
 [node name="ButtonDown" type="AudioStreamPlayer" parent="DPadRight"]
 stream = ExtResource( 18 )
@@ -132,14 +124,10 @@ __meta__ = {
 scale = Vector2( 0.3, 0.3 )
 z_index = 101
 
-[node name="TextureButton" type="TextureButton" parent="DPadDown/Node2D"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TouchButton" type="TouchScreenButton" parent="DPadDown/Node2D"]
+normal = ExtResource( 6 )
+pressed = ExtResource( 8 )
+passby_press = true
 
 [node name="ButtonDown" type="AudioStreamPlayer" parent="DPadDown"]
 stream = ExtResource( 18 )
@@ -163,14 +151,10 @@ __meta__ = {
 scale = Vector2( 0.3, 0.3 )
 z_index = 101
 
-[node name="TextureButton" type="TextureButton" parent="DPadLeft/Node2D"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TouchButton" type="TouchScreenButton" parent="DPadLeft/Node2D"]
+normal = ExtResource( 4 )
+pressed = ExtResource( 5 )
+passby_press = true
 
 [node name="ButtonDown" type="AudioStreamPlayer" parent="DPadLeft"]
 stream = ExtResource( 18 )
@@ -195,14 +179,10 @@ __meta__ = {
 scale = Vector2( 0.3, 0.3 )
 z_index = 101
 
-[node name="TextureButton" type="TextureButton" parent="AButton/Node2D"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TouchButton" type="TouchScreenButton" parent="AButton/Node2D"]
+normal = ExtResource( 11 )
+pressed = ExtResource( 10 )
+passby_press = true
 
 [node name="ButtonDown" type="AudioStreamPlayer" parent="AButton"]
 stream = ExtResource( 18 )
@@ -226,14 +206,10 @@ __meta__ = {
 scale = Vector2( 0.3, 0.3 )
 z_index = 101
 
-[node name="TextureButton" type="TextureButton" parent="BButton/Node2D"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 13 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TouchButton" type="TouchScreenButton" parent="BButton/Node2D"]
+normal = ExtResource( 12 )
+pressed = ExtResource( 13 )
+passby_press = true
 
 [node name="ButtonDown" type="AudioStreamPlayer" parent="BButton"]
 stream = ExtResource( 18 )
@@ -259,14 +235,10 @@ __meta__ = {
 scale = Vector2( 0.2, 0.2 )
 z_index = 101
 
-[node name="TextureButton" type="TextureButton" parent="StartButton/Node2D"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture_normal = ExtResource( 15 )
-texture_pressed = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TouchButton" type="TouchScreenButton" parent="StartButton/Node2D"]
+normal = ExtResource( 15 )
+pressed = ExtResource( 14 )
+passby_press = true
 
 [node name="ButtonDown" type="AudioStreamPlayer" parent="StartButton"]
 stream = ExtResource( 18 )
@@ -292,14 +264,10 @@ __meta__ = {
 scale = Vector2( 0.2, 0.2 )
 z_index = 101
 
-[node name="TextureButton" type="TextureButton" parent="SelectButton/Node2D"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture_normal = ExtResource( 16 )
-texture_pressed = ExtResource( 17 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TouchButton" type="TouchScreenButton" parent="SelectButton/Node2D"]
+normal = ExtResource( 16 )
+pressed = ExtResource( 17 )
+passby_press = true
 
 [node name="ButtonDown" type="AudioStreamPlayer" parent="SelectButton"]
 stream = ExtResource( 18 )
@@ -307,19 +275,19 @@ stream = ExtResource( 18 )
 [node name="ButtonUp" type="AudioStreamPlayer" parent="SelectButton"]
 stream = ExtResource( 19 )
 
-[connection signal="button_down" from="DPadUp/Node2D/TextureButton" to="DPadUp" method="_on_TextureButton_button_down"]
-[connection signal="button_up" from="DPadUp/Node2D/TextureButton" to="DPadUp" method="_on_TextureButton_button_up"]
-[connection signal="button_down" from="DPadRight/Node2D/TextureButton" to="DPadRight" method="_on_TextureButton_button_down"]
-[connection signal="button_up" from="DPadRight/Node2D/TextureButton" to="DPadRight" method="_on_TextureButton_button_up"]
-[connection signal="button_down" from="DPadDown/Node2D/TextureButton" to="DPadDown" method="_on_TextureButton_button_down"]
-[connection signal="button_up" from="DPadDown/Node2D/TextureButton" to="DPadDown" method="_on_TextureButton_button_up"]
-[connection signal="button_down" from="DPadLeft/Node2D/TextureButton" to="DPadLeft" method="_on_TextureButton_button_down"]
-[connection signal="button_up" from="DPadLeft/Node2D/TextureButton" to="DPadLeft" method="_on_TextureButton_button_up"]
-[connection signal="button_down" from="AButton/Node2D/TextureButton" to="AButton" method="_on_TextureButton_button_down"]
-[connection signal="button_up" from="AButton/Node2D/TextureButton" to="AButton" method="_on_TextureButton_button_up"]
-[connection signal="button_down" from="BButton/Node2D/TextureButton" to="BButton" method="_on_TextureButton_button_down"]
-[connection signal="button_up" from="BButton/Node2D/TextureButton" to="BButton" method="_on_TextureButton_button_up"]
-[connection signal="button_down" from="StartButton/Node2D/TextureButton" to="StartButton" method="_on_TextureButton_button_down"]
-[connection signal="button_up" from="StartButton/Node2D/TextureButton" to="StartButton" method="_on_TextureButton_button_up"]
-[connection signal="button_down" from="SelectButton/Node2D/TextureButton" to="SelectButton" method="_on_TextureButton_button_down"]
-[connection signal="button_up" from="SelectButton/Node2D/TextureButton" to="SelectButton" method="_on_TextureButton_button_up"]
+[connection signal="pressed" from="DPadUp/Node2D/TouchButton" to="DPadUp" method="_on_TouchButton_pressed"]
+[connection signal="released" from="DPadUp/Node2D/TouchButton" to="DPadUp" method="_on_TouchButton_released"]
+[connection signal="pressed" from="DPadRight/Node2D/TouchButton" to="DPadRight" method="_on_TouchButton_pressed"]
+[connection signal="released" from="DPadRight/Node2D/TouchButton" to="DPadRight" method="_on_TouchButton_released"]
+[connection signal="pressed" from="DPadDown/Node2D/TouchButton" to="DPadDown" method="_on_TouchButton_pressed"]
+[connection signal="released" from="DPadDown/Node2D/TouchButton" to="DPadDown" method="_on_TouchButton_released"]
+[connection signal="pressed" from="DPadLeft/Node2D/TouchButton" to="DPadLeft" method="_on_TouchButton_pressed"]
+[connection signal="released" from="DPadLeft/Node2D/TouchButton" to="DPadLeft" method="_on_TouchButton_released"]
+[connection signal="pressed" from="AButton/Node2D/TouchButton" to="AButton" method="_on_TouchButton_pressed"]
+[connection signal="released" from="AButton/Node2D/TouchButton" to="AButton" method="_on_TouchButton_released"]
+[connection signal="pressed" from="BButton/Node2D/TouchButton" to="BButton" method="_on_TouchButton_pressed"]
+[connection signal="released" from="BButton/Node2D/TouchButton" to="BButton" method="_on_TouchButton_released"]
+[connection signal="pressed" from="StartButton/Node2D/TouchButton" to="StartButton" method="_on_TouchButton_pressed"]
+[connection signal="released" from="StartButton/Node2D/TouchButton" to="StartButton" method="_on_TouchButton_released"]
+[connection signal="pressed" from="SelectButton/Node2D/TouchButton" to="SelectButton" method="_on_TouchButton_pressed"]
+[connection signal="released" from="SelectButton/Node2D/TouchButton" to="SelectButton" method="_on_TouchButton_released"]
