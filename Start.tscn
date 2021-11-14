@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://MainMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://onscreenControls/Sprites/flatLight/flatLight01.png" type="Texture" id=2]
@@ -13,6 +13,20 @@
 [ext_resource path="res://onscreenControls/Sprites/flatDark/flatDark35.png" type="Texture" id=11]
 [ext_resource path="res://onscreenControls/Sprites/flatDark/flatDark36.png" type="Texture" id=12]
 [ext_resource path="res://onscreenControls/Sprites/flatLight/flatLight35.png" type="Texture" id=13]
+[ext_resource path="res://onscreenControls/Sprites/flatLight/flatLight40.png" type="Texture" id=14]
+[ext_resource path="res://onscreenControls/Sprites/flatDark/flatDark41.png" type="Texture" id=15]
+[ext_resource path="res://onscreenControls/Sprites/flatDark/flatDark42.png" type="Texture" id=16]
+[ext_resource path="res://onscreenControls/Sprites/flatLight/flatLight41.png" type="Texture" id=17]
+[ext_resource path="res://click1.wav" type="AudioStream" id=18]
+[ext_resource path="res://click2.wav" type="AudioStream" id=19]
+[ext_resource path="res://SelectButton.gd" type="Script" id=20]
+[ext_resource path="res://StartButton.gd" type="Script" id=21]
+[ext_resource path="res://DPadDown.gd" type="Script" id=22]
+[ext_resource path="res://DPadLeft.gd" type="Script" id=23]
+[ext_resource path="res://BButton.gd" type="Script" id=24]
+[ext_resource path="res://AButton.gd" type="Script" id=25]
+[ext_resource path="res://DPadRight.gd" type="Script" id=26]
+[ext_resource path="res://DPadUp.gd" type="Script" id=27]
 
 [node name="Start" type="Control"]
 anchor_right = 1.0
@@ -45,6 +59,7 @@ margin_top = 182.0
 margin_right = 53.0
 margin_bottom = 205.0
 rect_pivot_offset = Vector2( 9.0856, 22.4841 )
+script = ExtResource( 27 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -64,12 +79,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ButtonDown" type="AudioStreamPlayer" parent="DPadUp"]
+stream = ExtResource( 18 )
+
+[node name="ButtonUp" type="AudioStreamPlayer" parent="DPadUp"]
+stream = ExtResource( 19 )
+
 [node name="DPadRight" type="Control" parent="."]
 margin_left = 43.0
 margin_top = 196.0
 margin_right = 62.0
 margin_bottom = 219.0
 rect_pivot_offset = Vector2( 9.0856, 22.4841 )
+script = ExtResource( 26 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -88,12 +110,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ButtonDown" type="AudioStreamPlayer" parent="DPadRight"]
+stream = ExtResource( 18 )
+
+[node name="ButtonUp" type="AudioStreamPlayer" parent="DPadRight"]
+stream = ExtResource( 19 )
+
 [node name="DPadDown" type="Control" parent="."]
 margin_left = 35.0
 margin_top = 204.0
 margin_right = 54.0
 margin_bottom = 227.0
 rect_pivot_offset = Vector2( 9.0856, 22.4841 )
+script = ExtResource( 22 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -112,12 +141,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ButtonDown" type="AudioStreamPlayer" parent="DPadDown"]
+stream = ExtResource( 18 )
+
+[node name="ButtonUp" type="AudioStreamPlayer" parent="DPadDown"]
+stream = ExtResource( 19 )
+
 [node name="DPadLeft" type="Control" parent="."]
 margin_left = 22.0
 margin_top = 196.0
 margin_right = 41.0
 margin_bottom = 219.0
 rect_pivot_offset = Vector2( 9.0856, 22.4841 )
+script = ExtResource( 23 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -136,6 +172,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ButtonDown" type="AudioStreamPlayer" parent="DPadLeft"]
+stream = ExtResource( 18 )
+
+[node name="ButtonUp" type="AudioStreamPlayer" parent="DPadLeft"]
+stream = ExtResource( 19 )
+
 [node name="AButton" type="Control" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -143,6 +185,7 @@ margin_left = -45.0
 margin_top = 192.0
 margin_right = -5.0
 margin_bottom = 232.0
+script = ExtResource( 25 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -161,6 +204,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ButtonDown" type="AudioStreamPlayer" parent="AButton"]
+stream = ExtResource( 18 )
+
+[node name="ButtonUp" type="AudioStreamPlayer" parent="AButton"]
+stream = ExtResource( 19 )
+
 [node name="BButton" type="Control" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -168,6 +217,7 @@ margin_left = -73.0
 margin_top = 197.0
 margin_right = -33.0
 margin_bottom = 237.0
+script = ExtResource( 24 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -184,3 +234,92 @@ texture_pressed = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ButtonDown" type="AudioStreamPlayer" parent="BButton"]
+stream = ExtResource( 18 )
+
+[node name="ButtonUp" type="AudioStreamPlayer" parent="BButton"]
+stream = ExtResource( 19 )
+
+[node name="StartButton" type="Control" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 234.0
+margin_right = 24.0
+margin_bottom = 274.0
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="StartButton"]
+scale = Vector2( 0.2, 0.2 )
+z_index = 101
+
+[node name="TextureButton" type="TextureButton" parent="StartButton/Node2D"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonDown" type="AudioStreamPlayer" parent="StartButton"]
+stream = ExtResource( 18 )
+
+[node name="ButtonUp" type="AudioStreamPlayer" parent="StartButton"]
+stream = ExtResource( 19 )
+
+[node name="SelectButton" type="Control" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_top = 234.0
+margin_right = -2.0
+margin_bottom = 274.0
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="SelectButton"]
+scale = Vector2( 0.2, 0.2 )
+z_index = 101
+
+[node name="TextureButton" type="TextureButton" parent="SelectButton/Node2D"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonDown" type="AudioStreamPlayer" parent="SelectButton"]
+stream = ExtResource( 18 )
+
+[node name="ButtonUp" type="AudioStreamPlayer" parent="SelectButton"]
+stream = ExtResource( 19 )
+
+[connection signal="button_down" from="DPadUp/Node2D/TextureButton" to="DPadUp" method="_on_TextureButton_button_down"]
+[connection signal="button_up" from="DPadUp/Node2D/TextureButton" to="DPadUp" method="_on_TextureButton_button_up"]
+[connection signal="button_down" from="DPadRight/Node2D/TextureButton" to="DPadRight" method="_on_TextureButton_button_down"]
+[connection signal="button_up" from="DPadRight/Node2D/TextureButton" to="DPadRight" method="_on_TextureButton_button_up"]
+[connection signal="button_down" from="DPadDown/Node2D/TextureButton" to="DPadDown" method="_on_TextureButton_button_down"]
+[connection signal="button_up" from="DPadDown/Node2D/TextureButton" to="DPadDown" method="_on_TextureButton_button_up"]
+[connection signal="button_down" from="DPadLeft/Node2D/TextureButton" to="DPadLeft" method="_on_TextureButton_button_down"]
+[connection signal="button_up" from="DPadLeft/Node2D/TextureButton" to="DPadLeft" method="_on_TextureButton_button_up"]
+[connection signal="button_down" from="AButton/Node2D/TextureButton" to="AButton" method="_on_TextureButton_button_down"]
+[connection signal="button_up" from="AButton/Node2D/TextureButton" to="AButton" method="_on_TextureButton_button_up"]
+[connection signal="button_down" from="BButton/Node2D/TextureButton" to="BButton" method="_on_TextureButton_button_down"]
+[connection signal="button_up" from="BButton/Node2D/TextureButton" to="BButton" method="_on_TextureButton_button_up"]
+[connection signal="button_down" from="StartButton/Node2D/TextureButton" to="StartButton" method="_on_TextureButton_button_down"]
+[connection signal="button_up" from="StartButton/Node2D/TextureButton" to="StartButton" method="_on_TextureButton_button_up"]
+[connection signal="button_down" from="SelectButton/Node2D/TextureButton" to="SelectButton" method="_on_TextureButton_button_down"]
+[connection signal="button_up" from="SelectButton/Node2D/TextureButton" to="SelectButton" method="_on_TextureButton_button_up"]
