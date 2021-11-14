@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://TitleAnimation.tscn" type="PackedScene" id=2]
-[ext_resource path="res://dirtyharry.png" type="Texture" id=3]
-[ext_resource path="res://barrel.png" type="Texture" id=4]
 
 [node name="MainMenu" type="GridContainer"]
 anchor_right = 1.0
@@ -60,28 +58,9 @@ __meta__ = {
 }
 
 [node name="2" type="Control" parent="VBoxContainer/HBoxContainer"]
-margin_right = 78.0
-margin_bottom = 76.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Node2D" type="Node2D" parent="VBoxContainer/HBoxContainer/2"]
-
-[node name="a_button" type="Control" parent="VBoxContainer/HBoxContainer"]
-margin_left = 82.0
 margin_right = 160.0
 margin_bottom = 76.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Node2D" type="Node2D" parent="VBoxContainer/HBoxContainer/a_button"]
-position = Vector2( 53.2251, 17.1157 )
-scale = Vector2( 0.4, 0.4 )
-z_index = 101
-
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/a_button/Node2D"]
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Node2D" type="Node2D" parent="VBoxContainer/HBoxContainer/2"]

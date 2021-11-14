@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://MainMenu.tscn" type="PackedScene" id=1]
-[ext_resource path="res://barrel.png" type="Texture" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://onscreenControls/Sprites/flatLight/flatLight01.png" type="Texture" id=2]
+[ext_resource path="res://onscreenControls/Sprites/flatDark/flatDark02.png" type="Texture" id=3]
+[ext_resource path="res://onscreenControls/Sprites/flatDark/flatDark04.png" type="Texture" id=4]
+[ext_resource path="res://onscreenControls/Sprites/flatLight/flatLight03.png" type="Texture" id=5]
+[ext_resource path="res://onscreenControls/Sprites/flatDark/flatDark09.png" type="Texture" id=6]
+[ext_resource path="res://onscreenControls/Sprites/flatLight/flatLight04.png" type="Texture" id=7]
+[ext_resource path="res://onscreenControls/Sprites/flatLight/flatLight08.png" type="Texture" id=8]
+[ext_resource path="res://onscreenControls/Sprites/flatDark/flatDark05.png" type="Texture" id=9]
+[ext_resource path="res://onscreenControls/Sprites/flatLight/flatLight34.png" type="Texture" id=10]
+[ext_resource path="res://onscreenControls/Sprites/flatDark/flatDark35.png" type="Texture" id=11]
+[ext_resource path="res://onscreenControls/Sprites/flatDark/flatDark36.png" type="Texture" id=12]
+[ext_resource path="res://onscreenControls/Sprites/flatLight/flatLight35.png" type="Texture" id=13]
 
 [node name="Start" type="Control"]
 anchor_right = 1.0
@@ -24,49 +34,153 @@ __meta__ = {
 }
 
 [node name="MainMenu" parent="." instance=ExtResource( 1 )]
-margin_top = 19.4007
-margin_bottom = -20.5993
+margin_left = 20.9557
+margin_top = 19.8151
+margin_right = -19.0443
+margin_bottom = -20.1849
 
-[node name="Control" type="Control" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -48.1513
-margin_top = 177.967
-margin_right = -8.15128
-margin_bottom = 217.967
+[node name="DPadUp" type="Control" parent="."]
+margin_left = 34.0
+margin_top = 182.0
+margin_right = 53.0
+margin_bottom = 205.0
+rect_pivot_offset = Vector2( 9.0856, 22.4841 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Node2D" type="Node2D" parent="Control"]
-position = Vector2( 21.9569, 23.4978 )
+[node name="Node2D" type="Node2D" parent="DPadUp"]
+scale = Vector2( 0.3, 0.3 )
 z_index = 101
 
-[node name="TextureButton" type="TextureButton" parent="Control/Node2D"]
-margin_left = -34.6689
-margin_top = -43.5287
-margin_right = 31.3311
-margin_bottom = 35.4713
-texture_normal = ExtResource( 2 )
+[node name="TextureButton" type="TextureButton" parent="DPadUp/Node2D"]
+margin_left = 3.08616
+margin_top = 5.71906
+margin_right = 64.0862
+margin_bottom = 81.7191
+texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control2" type="Control" parent="."]
-margin_left = 29.8383
-margin_top = 186.904
-margin_right = 69.8383
-margin_bottom = 226.904
+[node name="DPadRight" type="Control" parent="."]
+margin_left = 43.0
+margin_top = 196.0
+margin_right = 62.0
+margin_bottom = 219.0
+rect_pivot_offset = Vector2( 9.0856, 22.4841 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
 
-[node name="Node2D" type="Node2D" parent="Control2"]
+[node name="Node2D" type="Node2D" parent="DPadRight"]
+scale = Vector2( 0.3, 0.3 )
 z_index = 101
 
-[node name="TextureButton" type="TextureButton" parent="Control2/Node2D"]
+[node name="TextureButton" type="TextureButton" parent="DPadRight/Node2D"]
 margin_right = 40.0
 margin_bottom = 40.0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 3 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DPadDown" type="Control" parent="."]
+margin_left = 35.0
+margin_top = 204.0
+margin_right = 54.0
+margin_bottom = 227.0
+rect_pivot_offset = Vector2( 9.0856, 22.4841 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="DPadDown"]
+scale = Vector2( 0.3, 0.3 )
+z_index = 101
+
+[node name="TextureButton" type="TextureButton" parent="DPadDown/Node2D"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DPadLeft" type="Control" parent="."]
+margin_left = 22.0
+margin_top = 196.0
+margin_right = 41.0
+margin_bottom = 219.0
+rect_pivot_offset = Vector2( 9.0856, 22.4841 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="DPadLeft"]
+scale = Vector2( 0.3, 0.3 )
+z_index = 101
+
+[node name="TextureButton" type="TextureButton" parent="DPadLeft/Node2D"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AButton" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -45.0
+margin_top = 192.0
+margin_right = -5.0
+margin_bottom = 232.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="AButton"]
+scale = Vector2( 0.3, 0.3 )
+z_index = 101
+
+[node name="TextureButton" type="TextureButton" parent="AButton/Node2D"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BButton" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -73.0
+margin_top = 197.0
+margin_right = -33.0
+margin_bottom = 237.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Node2D" type="Node2D" parent="BButton"]
+scale = Vector2( 0.3, 0.3 )
+z_index = 101
+
+[node name="TextureButton" type="TextureButton" parent="BButton/Node2D"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
