@@ -270,10 +270,10 @@ stream = ExtResource( 18 )
 stream = ExtResource( 19 )
 
 [node name="Screen" parent="." instance=ExtResource( 1 )]
-anchor_left = 0.0
-anchor_right = 0.0
+anchor_left = 0.5
+margin_left = -90.0
 margin_top = 0.0
-margin_right = 0.0
+margin_right = -90.0
 margin_bottom = 0.0
 
 [connection signal="pressed" from="DPadUp/Node2D/TouchButton" to="DPadUp" method="_on_TouchButton_pressed"]
