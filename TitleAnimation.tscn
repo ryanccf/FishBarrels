@@ -100,9 +100,9 @@ margin_left = -65.6123
 margin_top = -18.3877
 margin_right = 232.388
 margin_bottom = 59.6123
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "Fish   Barrels"
 align = 1
 valign = 1
@@ -137,79 +137,3 @@ texture = ExtResource( 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BarrelProp2"]
 autoplay = "main"
 anims/main = SubResource( 4 )
-
-[node name="GameBoyBody" type="Control" parent="."]
-margin_left = 80.0
-margin_top = 72.0
-margin_right = 240.0
-margin_bottom = 296.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Node2D" type="Node2D" parent="GameBoyBody"]
-z_index = 100
-
-[node name="BezelBottom" type="ColorRect" parent="GameBoyBody/Node2D"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -500.0
-margin_top = 72.0
-margin_right = 500.0
-margin_bottom = 1072.0
-rect_min_size = Vector2( 50, 50 )
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BezelTop" type="ColorRect" parent="GameBoyBody/Node2D"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -500.0
-margin_top = -1072.0
-margin_right = 500.0
-margin_bottom = -72.0
-rect_min_size = Vector2( 50, 50 )
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BezelLeft" type="ColorRect" parent="GameBoyBody/Node2D"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -1080.0
-margin_top = -500.0
-margin_right = -80.0
-margin_bottom = 500.0
-rect_min_size = Vector2( 50, 50 )
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BezelRight" type="ColorRect" parent="GameBoyBody/Node2D"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 79.1301
-margin_top = -500.0
-margin_right = 1079.12
-margin_bottom = 500.0
-rect_min_size = Vector2( 50, 50 )
-color = Color( 0.862745, 0.862745, 0.862745, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
