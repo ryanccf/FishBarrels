@@ -271,6 +271,7 @@ stream = ExtResource( 19 )
 
 [node name="Screen" parent="." instance=ExtResource( 1 )]
 anchor_left = 0.5
+anchor_right = 0.5
 margin_left = -90.0
 margin_top = 0.0
 margin_right = -90.0

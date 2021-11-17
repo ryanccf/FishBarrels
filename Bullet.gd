@@ -8,9 +8,14 @@ const GRAVITY = 90.8 * DOWN.y
 var velocity = 0
 
 func _ready():
-	set_as_toplevel(true)
-	position = get_parent().barrel_position()
-	rotation = get_parent().get_rotation()
+	var gun = get_parent()
+	var background = gun.get_parent()
+	var barrel_position = gun.barrel_position()
+	gun.remove_child(self)
+	background.add_child(self)
+	self.set_owner(background)
+	set_global_position(barrel_position)
+	rotation = gun.get_rotation()
 	velocity = Vector2(1, 0).rotated(rotation) * SPEED
 
 func _physics_process(delta):

@@ -4,6 +4,8 @@ var gun_angle = 0
 var hand_shakiness = 0
 var ready_to_fire = true
 
+var newPosition 
+
 
 func move_hand(delta):
 	hand_shakiness += delta * 1.123
@@ -24,13 +26,12 @@ func accept_input():
 
 func fire():
 	add_child(load("res://Bullet.tscn").instance())
-	$AnimationPlayer.play("shoot")
+	#$AnimationPlayer.play("shoot")
 	ready_to_fire = false
 	$Reload.start()
 
 func barrel_position():
-	return $Position2D.global_position
-
+	return $Position2D.get_global_position()
 
 func _on_Reload_timeout():
 	ready_to_fire = true
