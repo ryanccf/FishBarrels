@@ -61,10 +61,12 @@ __meta__ = {
 }
 
 [node name="Node2D" type="Node2D" parent="DPadUp"]
+position = Vector2( -0.25, 0.3 )
 scale = Vector2( 0.3, 0.3 )
 z_index = 101
 
 [node name="TouchButton" type="TouchScreenButton" parent="DPadUp/Node2D"]
+position = Vector2( 3.33334, 0 )
 normal = ExtResource( 3 )
 pressed = ExtResource( 2 )
 passby_press = true

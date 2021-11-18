@@ -16,6 +16,7 @@ script = ExtResource( 1 )
 margin_left = 0.0623398
 margin_right = 160.062
 margin_bottom = 144.0
+rect_clip_content = true
 color = Color( 0.878431, 0.972549, 0.815686, 1 )
 __meta__ = {
 "_edit_lock_": true,

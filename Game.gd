@@ -12,7 +12,7 @@ func _on_GameTimer_timeout():
 	load_game_over()
 
 func load_game_over():
-	var daddy = get_parent()
-	daddy.remove_child(self)
-	daddy.add_child(gameover)
+	var screen = get_parent()
+	screen.remove_child(self)
+	screen.add_child(gameover)
 	call_deferred("free")
