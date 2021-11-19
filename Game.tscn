@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Gun.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Fish.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Barrel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Score.gd" type="Script" id=5]
 [ext_resource path="res://GameTimer.gd" type="Script" id=6]
@@ -40,21 +39,6 @@ z_index = 0
 
 [node name="Gun" parent="Background/Background" instance=ExtResource( 2 )]
 position = Vector2( 21.637, 111.32 )
-
-[node name="Fish" parent="Background/Background" instance=ExtResource( 3 )]
-position = Vector2( 129.784, 87.2958 )
-
-[node name="Fish5" parent="Background/Background" instance=ExtResource( 3 )]
-position = Vector2( 98.1915, 68.8171 )
-
-[node name="Fish2" parent="Background/Background" instance=ExtResource( 3 )]
-position = Vector2( 131.572, 112.927 )
-
-[node name="Fish4" parent="Background/Background" instance=ExtResource( 3 )]
-position = Vector2( 94.1679, 99.3665 )
-
-[node name="Fish3" parent="Background/Background" instance=ExtResource( 3 )]
-position = Vector2( 110.411, 128.426 )
 
 [node name="Score" type="Label" parent="Background/Background"]
 modulate = Color( 0.203922, 0.407843, 0.337255, 1 )

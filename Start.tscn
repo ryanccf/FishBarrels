@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://onscreenControls/Sprites/flatLight/flatLight01.png" type="Texture" id=2]
@@ -29,6 +29,22 @@
 [ext_resource path="res://DPadUp.gd" type="Script" id=27]
 [ext_resource path="res://click3.wav" type="AudioStream" id=28]
 [ext_resource path="res://click4.wav" type="AudioStream" id=29]
+[ext_resource path="res://Screen.gd" type="Script" id=30]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float size_x = 160.0;
+uniform float size_y = 144.0;
+
+void fragment() {
+	COLOR = texture(TEXTURE, vec2(floor(UV.x * size_x) / (size_x - 1.0), floor(UV.y * size_y) / (size_y - 1.0)));
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/size_x = 160.0
+shader_param/size_y = 144.0
 
 [node name="Start" type="Control"]
 anchor_right = 1.0
@@ -272,12 +288,12 @@ stream = ExtResource( 18 )
 stream = ExtResource( 19 )
 
 [node name="Screen" parent="." instance=ExtResource( 1 )]
+material = SubResource( 2 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -90.0
-margin_top = 0.0
 margin_right = -90.0
-margin_bottom = 0.0
+script = ExtResource( 30 )
 
 [connection signal="pressed" from="DPadUp/Node2D/TouchButton" to="DPadUp" method="_on_TouchButton_pressed"]
 [connection signal="released" from="DPadUp/Node2D/TouchButton" to="DPadUp" method="_on_TouchButton_released"]

@@ -12,7 +12,6 @@ collision_layer = 8
 collision_mask = 6
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-visible = false
 position = Vector2( -0.588638, -0.294319 )
 polygon = PoolVector2Array( 76.7199, 62.5809, 81.4006, 65.8123, 80.9673, 139.034, 146.755, 138.751, 147.41, 65.4823, 152.031, 62.6219, 152.135, 144.32, 75.8704, 144.037 )
 
