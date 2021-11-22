@@ -30,6 +30,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="KinematicBody2D"]
+emitting = false
+amount = 100
+lifetime = 151.55
+explosiveness = 1.0
+randomness = 1.0
+local_coords = false
+emission_shape = 1
+emission_sphere_radius = 4.5
+spread = 180.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 187.9
+color = Color( 0.533333, 0.752941, 0.439216, 1 )
+
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 5.0
 
