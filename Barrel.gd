@@ -3,9 +3,15 @@ extends Node2D
 #var fishy = preload("res://Fish.tscn")
 # Called when the node enters the scene tree for the first time.
 var rng = RandomNumberGenerator.new()
+var fishasset = preload("res://Fish.tscn")
 
 func _ready():
 	spawn_fish(5)
+	
+func _process(delta):
+	if global.get_remaining_fish() < 1:
+		spawn_fish(5)
+		global.modify_remaining_fish(5)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -43,8 +49,8 @@ func get_spawn_position():
 func spawn_fish(count = 1):
 	#for item in count:
 	#var foosh = fishy.instance()
-	for cunt in range(count):
-		var foosh = load("res://Fish.tscn").instance()
+	for item in range(count):
+		var foosh = fishasset.instance()
 		add_child(foosh)
 		var pos = get_spawn_position()
 

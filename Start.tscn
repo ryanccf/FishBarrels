@@ -73,6 +73,7 @@ margin_bottom = 205.0
 rect_pivot_offset = Vector2( 9.0856, 22.4841 )
 script = ExtResource( 27 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 

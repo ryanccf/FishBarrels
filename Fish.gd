@@ -58,6 +58,9 @@ func _on_Area2D_area_entered(area):
 
 func _on_Area2D_body_entered(body):
 	global.add_fish()
+	global.modify_remaining_fish(-1)
 	global.add_time(TIMEINCREASE)
 	queue_free()
 	body.get_parent().queue_free()
+
+
