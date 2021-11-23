@@ -5,7 +5,7 @@ func _ready():
 	$Background/numfish.set_text(str(global.get_fish()))
 
 func _process(_delta):
-	if Input.is_action_pressed("fire"):
+	if Input.is_action_pressed("restart"):
 		load_new_game()
 		#get_tree().change_scene(game)
 

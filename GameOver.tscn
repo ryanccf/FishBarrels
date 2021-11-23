@@ -48,13 +48,33 @@ anchor_top = 0.00269254
 anchor_right = -0.0024231
 anchor_bottom = 0.00269254
 margin_left = -67.6123
-margin_top = 67.1796
+margin_top = 36.1796
 margin_right = 230.388
-margin_bottom = 145.18
+margin_bottom = 114.18
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Fish:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Background"]
+anchor_left = -0.0024231
+anchor_top = 0.00269254
+anchor_right = -0.0024231
+anchor_bottom = 0.00269254
+margin_left = -67.6123
+margin_top = 86.1796
+margin_right = 230.388
+margin_bottom = 164.18
+custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Press   B
+To   Restart"
 align = 1
 valign = 1
 __meta__ = {
@@ -67,9 +87,9 @@ anchor_top = 0.00269254
 anchor_right = -0.0024231
 anchor_bottom = 0.00269254
 margin_left = -67.1796
-margin_top = 34.2693
+margin_top = 18.2693
 margin_right = 230.821
-margin_bottom = 112.269
+margin_bottom = 96.269
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_fonts/font = SubResource( 1 )
