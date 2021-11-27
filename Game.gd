@@ -17,4 +17,3 @@ func load_game_over():
 	screen.remove_child(self)
 	screen.add_child(gameover)
 	call_deferred("free")
-
