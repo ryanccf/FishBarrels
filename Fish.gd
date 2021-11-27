@@ -21,17 +21,14 @@ func _ready():
 
 func swim_and_collide(delta):
 	move_and_slide(Vector2(motion.x * delta * facing * -1, 0))
-	if get_slide_count() > 0:
-		return true
+	return get_slide_count() > 0
 
-func check_swimtime(delta):
-	swimtime += delta
-	if swimtime > swim_max:
-		swimtime = fmod(swimtime, swim_max)
-		return true
+func update_swimtime(delta):
+	swimtime = fmod(swimtime + delta, swim_max)
+	return swimtime > swim_max
 	
 func _physics_process(delta):
-	if swim_and_collide(delta) or check_swimtime(delta):
+	if swim_and_collide(delta) or update_swimtime(delta):
 		toggle_facing()
 
 func _on_Area2D_body_entered(body):
