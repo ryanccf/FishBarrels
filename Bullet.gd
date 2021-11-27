@@ -21,3 +21,11 @@ func _ready():
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
 	$KinematicBody2D.move_and_slide(velocity)
+	
+	for collision_index in range($KinematicBody2D.get_slide_count()):
+		var collision_name = $KinematicBody2D.get_slide_collision(collision_index).collider.name
+		if collision_name == "BarrelBody":
+			queue_free()
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()

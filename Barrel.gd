@@ -1,7 +1,5 @@
 extends Node2D
 
-#var fishy = preload("res://Fish.tscn")
-# Called when the node enters the scene tree for the first time.
 var rng = RandomNumberGenerator.new()
 var fishasset = preload("res://Fish.tscn")
 
@@ -13,12 +11,9 @@ func _process(delta):
 		spawn_fish(5)
 		global.modify_remaining_fish(5)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 func _on_Area2D_body_entered(body):
-	body.get_parent().queue_free()
+	print(body.name + "entered barrel wall")
+#	body.get_parent().queue_free()
 
 func get_top():
 	return $Node2D/Water.rect_position.y - 200
@@ -27,10 +22,10 @@ func get_bottom():
 	return get_top() + $Node2D/Water.rect_size.y + 5
 
 func get_left():
-	return $Node2D/Water.rect_position.x + 15
+	return $Node2D/Water.rect_position.x  - 55# + 15
 
 func get_right():
-	return get_left() + $Node2D/Water.rect_size.x - 30
+	return get_left() + $Node2D/Water.rect_size.x  - 50# - 30
 	
 func get_random_x():
 	rng.randomize()
@@ -41,18 +36,12 @@ func get_random_y():
 	return rng.randf_range(get_left(), get_right())
 	
 func get_spawn_position():
-	
-	return Vector2(get_random_x(), get_random_y())
-
-#	return Vector2(get_middle_x(), get_middle_y())
+	return Vector2(get_random_x(), 65)
 
 func spawn_fish(count = 1):
-	#for item in count:
-	#var foosh = fishy.instance()
 	for item in range(count):
 		var foosh = fishasset.instance()
-		add_child(foosh)
 		var pos = get_spawn_position()
-
+		pos.y -= (15 * item)
 		foosh.set_position(pos) 
 		$Node2D/Water.add_child(foosh)
