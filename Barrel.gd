@@ -11,10 +11,6 @@ func _process(delta):
 		spawn_fish(5)
 		global.modify_remaining_fish(5)
 
-func _on_Area2D_body_entered(body):
-	print(body.name + "entered barrel wall")
-#	body.get_parent().queue_free()
-
 func get_top():
 	return $Node2D/Water.rect_position.y - 200
 
@@ -22,19 +18,15 @@ func get_bottom():
 	return get_top() + $Node2D/Water.rect_size.y + 5
 
 func get_left():
-	return $Node2D/Water.rect_position.x  - 55# + 15
+	return $Node2D/Water.rect_position.x  - 65# + 15
 
 func get_right():
-	return get_left() + $Node2D/Water.rect_size.x  - 50# - 30
+	return get_left() + $Node2D/Water.rect_size.x  - 40# - 30
 	
 func get_random_x():
 	rng.randomize()
 	return rng.randf_range(get_left(), get_right())
 
-func get_random_y():
-	rng.randomize()
-	return rng.randf_range(get_left(), get_right())
-	
 func get_spawn_position():
 	return Vector2(get_random_x(), 65)
 
