@@ -1,0 +1,78 @@
+[gd_scene format=2]
+
+[node name="Bezel" type="Control"]
+margin_left = 80.0
+margin_top = 72.0
+margin_right = 240.0
+margin_bottom = 296.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 0, -80 )
+z_index = 100
+
+[node name="BezelBottom" type="ColorRect" parent="Node2D"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -500.0
+margin_top = 72.0
+margin_right = 500.0
+margin_bottom = 1072.0
+rect_min_size = Vector2( 50, 50 )
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BezelTop" type="ColorRect" parent="Node2D"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -500.0
+margin_top = -1072.0
+margin_right = 500.0
+margin_bottom = -72.0
+rect_min_size = Vector2( 50, 50 )
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BezelLeft" type="ColorRect" parent="Node2D"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1080.0
+margin_top = -500.0
+margin_right = -80.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 50, 50 )
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BezelRight" type="ColorRect" parent="Node2D"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 79.1301
+margin_top = -500.0
+margin_right = 1079.12
+margin_bottom = 500.0
+rect_min_size = Vector2( 50, 50 )
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

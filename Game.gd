@@ -1,14 +1,19 @@
 extends Node2D
 
-const GAMEOVER = "res://GameOver.tscn"
+var gameover = preload("res://GameOver.tscn").instance()
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	global.reset_fish()
+	global.initialize_fish()
 
 func _on_Area2D_body_entered(body):
 	body.get_parent().queue_free()
 
-
 func _on_GameTimer_timeout():
-	get_tree().change_scene(GAMEOVER)
+	load_game_over()
+
+func load_game_over():
+	var screen = get_parent()
+	screen.remove_child(self)
+	screen.add_child(gameover)
+	call_deferred("free")
