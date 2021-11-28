@@ -7,13 +7,13 @@ position = Vector2( 0, -0.136383 )
 z_index = -2
 script = ExtResource( 1 )
 
-[node name="BarrelBody" type="StaticBody2D" parent="."]
+[node name="BarrelSides" type="StaticBody2D" parent="."]
 collision_layer = 8
 collision_mask = 18
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BarrelBody"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BarrelSides"]
 position = Vector2( -0.588638, -0.294319 )
-polygon = PoolVector2Array( 76.7199, 62.5809, 81.4006, 65.8123, 80.9673, 139.034, 146.755, 138.751, 147.41, 65.4823, 152.031, 62.6219, 152.135, 144.32, 75.8704, 144.037 )
+polygon = PoolVector2Array( 76.7199, 62.5809, 81.4006, 65.8123, 81.102, 143.662, 147.235, 144.382, 147.41, 65.4823, 152.031, 62.6219, 152.135, 144.32, 75.8704, 144.037 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = 75.8699
@@ -32,16 +32,6 @@ margin_right = 152.257
 margin_bottom = 143.839
 color = Color( 0.203922, 0.407843, 0.337255, 1 )
 
-[node name="ColorRect3" type="ColorRect" parent="."]
-margin_left = 76.0
-margin_top = 139.0
-margin_right = 152.0
-margin_bottom = 144.0
-color = Color( 0.203922, 0.407843, 0.337255, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Water" type="ColorRect" parent="Node2D"]
@@ -55,9 +45,28 @@ __meta__ = {
 }
 
 [node name="Lid" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 32
 collision_mask = 16
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lid"]
 position = Vector2( 4.49786, 16.2615 )
-polygon = PoolVector2Array( 147.033, 39.1842, 147.379, 127.757, 72.645, 126.72, 72.0523, 41.9635, 142.189, 42.2981, 349.09, -127.929, -80.9743, -141.076, -88.24, 237.09, 346.669, 230.862, 350.128, -124.469, -76.4764, -138.308 )
+polygon = PoolVector2Array( 147.033, 39.1842, 147.263, 124.796, 71.7628, 125.665, 72.0523, 41.9635, 142.189, 42.2981, 349.09, -127.929, -80.9743, -141.076, -88.24, 237.09, 346.669, 230.862, 350.128, -124.469, -76.4764, -138.308 )
+
+[node name="BarrelBottom" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 18
+
+[node name="ColorRect3" type="ColorRect" parent="BarrelBottom"]
+margin_left = 76.0
+margin_top = 139.0
+margin_right = 152.0
+margin_bottom = 144.0
+color = Color( 0.203922, 0.407843, 0.337255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BarrelBottom"]
+position = Vector2( -0.588638, -0.294319 )
+polygon = PoolVector2Array( 76.3267, 138.886, 80.4713, 138.706, 80.9673, 139.034, 146.755, 138.751, 146.965, 139.067, 152.101, 138.526, 152.101, 144.923, 152.135, 144.32, 75.8704, 144.037 )
