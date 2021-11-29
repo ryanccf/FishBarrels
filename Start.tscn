@@ -212,7 +212,8 @@ margin_right = -33.0
 margin_bottom = 237.0
 script = ExtResource( 24 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
 [node name="Node2D" type="Node2D" parent="BButton"]
