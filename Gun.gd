@@ -7,7 +7,7 @@ var ready_to_fire = true
 func move_hand(delta):
 	hand_shakiness += delta * 1.123
 	gun_angle += delta
-	rotation = (sin(gun_angle) * 0.85) + 30
+	rotation = (sin(gun_angle * 2.7) * 0.38) + 30.15
 	position.y = (sin(hand_shakiness * 2) * 6) + 120
 	position.x = (sin(hand_shakiness) * 4) + 20
 
