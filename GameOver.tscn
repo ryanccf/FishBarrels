@@ -24,14 +24,12 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="Background"]
-anchor_left = -0.0024231
 anchor_top = 0.00269254
-anchor_right = -0.0024231
 anchor_bottom = 0.00269254
-margin_left = -65.6123
-margin_top = -18.3877
-margin_right = 232.388
-margin_bottom = 59.6123
+margin_left = -66.2082
+margin_top = -28.221
+margin_right = 231.792
+margin_bottom = 49.779
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_fonts/font = SubResource( 1 )
@@ -43,18 +41,33 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="Background"]
-anchor_left = -0.0024231
 anchor_top = 0.00269254
-anchor_right = -0.0024231
 anchor_bottom = 0.00269254
-margin_left = -67.6123
-margin_top = 36.1796
-margin_right = 230.388
-margin_bottom = 114.18
+margin_left = -66.1224
+margin_top = -3.74936
+margin_right = 231.878
+margin_bottom = 74.251
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Fish:"
+text = "Score"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="numfish" type="Label" parent="Background"]
+anchor_top = 0.00269254
+anchor_bottom = 0.00269254
+margin_left = -67.1796
+margin_top = 10.5219
+margin_right = 230.821
+margin_bottom = 88.5216
+custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
 align = 1
 valign = 1
 __meta__ = {
@@ -81,15 +94,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="numfish" type="Label" parent="Background"]
-anchor_left = -0.0024231
+[node name="Label5" type="Label" parent="Background"]
 anchor_top = 0.00269254
-anchor_right = -0.0024231
 anchor_bottom = 0.00269254
-margin_left = -67.1796
-margin_top = 18.2693
-margin_right = 230.821
-margin_bottom = 96.269
+margin_left = -61.0568
+margin_top = 35.2857
+margin_right = 236.943
+margin_bottom = 113.286
+custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Personal
+Best"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="personal_best" type="Label" parent="Background" groups=["Persist"]]
+anchor_top = 0.00269254
+anchor_bottom = 0.00269254
+margin_left = -68.9674
+margin_top = 59.6881
+margin_right = 229.033
+margin_bottom = 137.688
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_fonts/font = SubResource( 1 )
