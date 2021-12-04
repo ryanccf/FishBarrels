@@ -24,3 +24,9 @@ __meta__ = {
 }
 
 [node name="Dialog" parent="Background/Background" instance=ExtResource( 8 )]
+text = "Fish
+Barrels
+
+press   A   to   fire   and   B   to   restart
+
+"

@@ -1,6 +1,6 @@
 extends KinematicBody2D	
 
-const TIMEINCREASE = 5
+const TIMEINCREASE = 1
 const SWIM_MAX_FLOOR = 2
 const SWIM_MAX_CEILING = 8
 const SWIM_SPEED_FLOOR = 800
