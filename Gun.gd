@@ -11,6 +11,9 @@ func move_hand(delta):
 	position.y = (sin(hand_shakiness * 2) * 6) + 120
 	position.x = (sin(hand_shakiness) * 4) + 20
 
+func _ready():
+	move_hand(0)
+
 func _process(delta):
 	move_hand(delta)
 	accept_input()
