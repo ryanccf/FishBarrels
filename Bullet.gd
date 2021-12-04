@@ -24,7 +24,7 @@ func _physics_process(delta):
 	
 	for collision_index in range($KinematicBody2D.get_slide_count()):
 		var collision_name = $KinematicBody2D.get_slide_collision(collision_index).collider.name
-		if collision_name == "BarrelBody":
+		if collision_name == "BarrelSides" or collision_name == "BarrelBottom":
 			queue_free()
 
 func _on_VisibilityNotifier2D_screen_exited():

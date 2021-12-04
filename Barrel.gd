@@ -4,6 +4,7 @@ var rng = RandomNumberGenerator.new()
 var fishasset = preload("res://Fish.tscn")
 
 func _ready():
+	rng.randomize()
 	spawn_fish(5)
 	
 func _process(delta):
@@ -24,7 +25,6 @@ func get_right():
 	return get_left() + $Node2D/Water.rect_size.x  - 40# - 30
 	
 func get_random_x():
-	rng.randomize()
 	return rng.randf_range(get_left(), get_right())
 
 func get_spawn_position():
