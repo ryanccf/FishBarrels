@@ -11,5 +11,5 @@ dest_files=[ "res://.import/synth_misc_10.ogg-fa1424598e2adfc00a177779583a7f74.o
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

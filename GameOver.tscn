@@ -104,8 +104,8 @@ margin_bottom = 113.286
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Personal
-Best"
+text = "High
+Score"
 align = 1
 valign = 1
 __meta__ = {

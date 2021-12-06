@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Gun.gd" type="Script" id=1]
+[ext_resource path="res://synth_misc_10.ogg" type="AudioStream" id=2]
 
 [node name="Gun" type="Node2D"]
 position = Vector2( 23.4118, 104.259 )
@@ -67,5 +68,8 @@ z_index = 128
 
 [node name="Reload" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
 
 [connection signal="timeout" from="Reload" to="." method="_on_Reload_timeout"]
