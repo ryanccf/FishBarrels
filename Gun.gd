@@ -3,7 +3,6 @@ extends Node2D
 var gun_angle = 0
 var hand_shakiness = 0
 var ready_to_fire = true
-var gun_shot = preload("res://synth_misc_10.ogg")
 
 func move_hand(delta):
 	hand_shakiness += delta * 1.123

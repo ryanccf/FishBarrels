@@ -1,20 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Gun.tscn" type="PackedScene" id=2]
+[ext_resource path="res://cowboy.fnt" type="BitmapFont" id=3]
 [ext_resource path="res://Barrel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Score.gd" type="Script" id=5]
 [ext_resource path="res://GameTimer.gd" type="Script" id=6]
 [ext_resource path="res://Time.gd" type="Script" id=7]
-
-[sub_resource type="DynamicFontData" id=1]
-font_path = "res://Mario-Kart-DS.ttf"
-
-[sub_resource type="DynamicFont" id=2]
-size = 24
-outline_size = 1
-outline_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-font_data = SubResource( 1 )
 
 [node name="Game" type="Node2D"]
 pause_mode = 2
@@ -48,7 +40,8 @@ margin_left = 4.15903
 margin_top = 1.02753
 margin_right = 71.159
 margin_bottom = 21.0275
-custom_fonts/font = SubResource( 2 )
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 3 )
 text = "0"
 script = ExtResource( 5 )
 __meta__ = {
@@ -57,11 +50,12 @@ __meta__ = {
 
 [node name="Time" type="Label" parent="Background/Background"]
 modulate = Color( 0.203922, 0.407843, 0.337255, 1 )
-margin_left = 83.1317
-margin_top = 1.32013
-margin_right = 157.132
-margin_bottom = 21.3201
-custom_fonts/font = SubResource( 2 )
+margin_left = 120.006
+margin_top = 1.68887
+margin_right = 194.007
+margin_bottom = 65.6889
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 3 )
 text = "0"
 align = 2
 script = ExtResource( 7 )

@@ -10,6 +10,7 @@ const BOBBING_AMPLITUDE_CEILING = 8
 const BOBBING_FREQUENCY_FLOOR = 1
 const BOBBING_FREQUENCY_CEILING = 8 
 
+
 var rng = RandomNumberGenerator.new()
 var swim_max
 var swimtime = 0
@@ -18,6 +19,7 @@ var motion = Vector2(0,0)
 var running_delta = 0
 var bobbing_amplitude
 var bobbing_frequency
+var action_on_death
 
 func _ready():
 	rng.randomize()
@@ -54,6 +56,8 @@ func _on_Area2D_body_entered(body):
 	global.add_time(TIMEINCREASE)
 	queue_free()
 	body.get_parent().queue_free()
+	if action_on_death:
+		action_on_death.call_func()
 
 func toggle_facing():
 	var last_position = position
@@ -63,3 +67,6 @@ func toggle_facing():
 		transform = Transform2D(Vector2(1, 0), Vector2(0, 1), Vector2(0, 0))
 	position = last_position
 	facing *= -1
+
+func on_death(function_reference):
+	action_on_death = function_reference

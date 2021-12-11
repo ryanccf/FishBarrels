@@ -36,4 +36,12 @@ func spawn_fish(count = 1):
 		var pos = get_spawn_position()
 		pos.y -= (15 * item)
 		foosh.set_position(pos) 
+		foosh.on_death(funcref(self, "play_scream"))
 		$Node2D/Water.add_child(foosh)
+
+func play_scream():
+	$FishScream.play()
+
+func on_body_entering_water(body):
+	$BulletSplash.play()
+	

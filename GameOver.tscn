@@ -1,12 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
-[ext_resource path="res://Mario-Kart-DS.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://cowboy.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://barrel.png" type="Texture" id=4]
-
-[sub_resource type="DynamicFont" id=1]
-size = 20
-font_data = ExtResource( 2 )
 
 [node name="GameOver" type="Node2D"]
 position = Vector2( 9.86987, 11.1273 )
@@ -26,14 +22,15 @@ __meta__ = {
 [node name="Label2" type="Label" parent="Background"]
 anchor_top = 0.00269254
 anchor_bottom = 0.00269254
-margin_left = -66.2082
-margin_top = -28.221
-margin_right = 231.792
-margin_bottom = 49.779
+margin_left = 6.79626
+margin_top = -6.46865
+margin_right = 310.796
+margin_bottom = 71.5313
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-custom_fonts/font = SubResource( 1 )
-text = "Game   Over"
+custom_fonts/font = ExtResource( 2 )
+text = "Game Over"
 align = 1
 valign = 1
 __meta__ = {
@@ -43,13 +40,14 @@ __meta__ = {
 [node name="Label3" type="Label" parent="Background"]
 anchor_top = 0.00269254
 anchor_bottom = 0.00269254
-margin_left = -66.1224
-margin_top = -3.74936
-margin_right = 231.878
-margin_bottom = 74.251
+margin_left = 22.3769
+margin_top = 18.5989
+margin_right = 320.377
+margin_bottom = 96.5993
+rect_scale = Vector2( 0.4, 0.4 )
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "Score"
 align = 1
 valign = 1
@@ -60,13 +58,14 @@ __meta__ = {
 [node name="numfish" type="Label" parent="Background"]
 anchor_top = 0.00269254
 anchor_bottom = 0.00269254
-margin_left = -67.1796
-margin_top = 10.5219
-margin_right = 230.821
-margin_bottom = 88.5216
+margin_left = 22.5116
+margin_top = 36.148
+margin_right = 320.512
+margin_bottom = 114.148
+rect_scale = Vector2( 0.4, 0.4 )
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "0"
 align = 1
 valign = 1
@@ -79,15 +78,17 @@ anchor_left = -0.0024231
 anchor_top = 0.00269254
 anchor_right = -0.0024231
 anchor_bottom = 0.00269254
-margin_left = -67.6123
-margin_top = 86.1796
-margin_right = 230.388
-margin_bottom = 164.18
+margin_left = 21.483
+margin_top = 98.3967
+margin_right = 319.483
+margin_bottom = 229.397
+rect_scale = Vector2( 0.4, 0.4 )
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-custom_fonts/font = SubResource( 1 )
-text = "Press   B
-To   Restart"
+custom_constants/line_spacing = -20
+custom_fonts/font = ExtResource( 2 )
+text = "Press B
+To Restart"
 align = 1
 valign = 1
 __meta__ = {
@@ -97,13 +98,15 @@ __meta__ = {
 [node name="Label5" type="Label" parent="Background"]
 anchor_top = 0.00269254
 anchor_bottom = 0.00269254
-margin_left = -61.0568
-margin_top = 35.2857
-margin_right = 236.943
-margin_bottom = 113.286
+margin_left = 17.035
+margin_top = 48.1628
+margin_right = 340.035
+margin_bottom = 193.163
+rect_scale = Vector2( 0.4, 0.4 )
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-custom_fonts/font = SubResource( 1 )
+custom_constants/line_spacing = -20
+custom_fonts/font = ExtResource( 2 )
 text = "High
 Score"
 align = 1
@@ -115,13 +118,14 @@ __meta__ = {
 [node name="personal_best" type="Label" parent="Background" groups=["Persist"]]
 anchor_top = 0.00269254
 anchor_bottom = 0.00269254
-margin_left = -68.9674
-margin_top = 59.6881
-margin_right = 229.033
-margin_bottom = 137.688
+margin_left = 20.7238
+margin_top = 87.9959
+margin_right = 318.724
+margin_bottom = 165.996
+rect_scale = Vector2( 0.4, 0.4 )
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "0"
 align = 1
 valign = 1
