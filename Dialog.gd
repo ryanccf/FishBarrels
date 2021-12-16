@@ -48,6 +48,10 @@ func handle_input():
 		return true
 
 func _process(delta):		
+	
+	set("custom_colors/default_color", Color(1, 1, 1, 1))
+	
+	
 	if handle_input() or is_delay_done():
 		on_complete_event.call_func()
 	else:

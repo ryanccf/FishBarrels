@@ -89,5 +89,6 @@ stream = ExtResource( 2 )
 
 [node name="BulletSplash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = 1.257
 
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="on_body_entering_water"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/spagetti western.ogg-3f157e3dc9534ae6af4a24055d911b36.oggstr"
+
+[deps]
+
+source_file="res://spagetti western.ogg"
+dest_files=[ "res://.import/spagetti western.ogg-3f157e3dc9534ae6af4a24055d911b36.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

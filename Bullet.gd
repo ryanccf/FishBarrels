@@ -10,7 +10,7 @@ var velocity = 0
 func _ready():
 	var gun = get_parent()
 	var background = gun.get_parent()
-	var barrel_position = gun.barrel_position()
+	var barrel_position = gun.get_barrel_position()
 	gun.remove_child(self)
 	background.add_child(self)
 	self.set_owner(background)

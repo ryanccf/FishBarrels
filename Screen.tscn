@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Title.tscn" type="PackedScene" id=1]
-[ext_resource path="res://BossMain.wav" type="AudioStream" id=2]
+[ext_resource path="res://spagetti western.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Screen.gd" type="Script" id=3]
 
 [node name="Screen" type="ViewportContainer"]

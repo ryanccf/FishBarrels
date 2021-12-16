@@ -30,11 +30,15 @@ func play_sound():
 
 func fire():
 	add_child(load("res://Bullet.tscn").instance())
+	add_child(load("res://Shell.tscn").instance())
 	ready_to_fire = false
 	$Reload.start()
 
-func barrel_position():
-	return $Position2D.get_global_position()
+func get_barrel_position():
+	return $BarrelPosition.get_global_position()
+	
+func get_ejector_position():
+	return $EjectorPosition.get_global_position()
 
 func _on_Reload_timeout():
 	ready_to_fire = true

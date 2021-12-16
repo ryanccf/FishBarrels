@@ -31,38 +31,43 @@ __meta__ = {
 }
 
 [node name="ColorRect3" type="ColorRect" parent="."]
-margin_left = -0.906673
-margin_top = -3.17868
-margin_right = 17.0933
-margin_bottom = 6.82132
+margin_left = -13.0
+margin_top = -4.0
+margin_right = 17.0
+margin_bottom = 7.0
 color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect5" type="ColorRect" parent="."]
-margin_left = 10.0933
-margin_top = -3.17868
-margin_right = 39.0933
-margin_bottom = 3.82132
+margin_left = 10.0
+margin_right = 23.0
+margin_bottom = 3.0
 color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect4" type="ColorRect" parent="."]
-margin_left = -4.28328
-margin_top = 16.7229
-margin_right = 3.71672
-margin_bottom = 18.7229
+margin_left = -5.0
+margin_top = 17.0
+margin_right = 4.0
+margin_bottom = 20.0
 color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Position2D" type="Position2D" parent="."]
+[node name="BarrelPosition" type="Position2D" parent="."]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 39.0647, 0.364235 )
+position = Vector2( 23, 1.5 )
+scale = Vector2( 1e-05, 1e-05 )
+z_index = 128
+
+[node name="EjectorPosition" type="Position2D" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( -5, -2 )
 scale = Vector2( 1e-05, 1e-05 )
 z_index = 128
 
@@ -71,5 +76,85 @@ wait_time = 0.1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+margin_left = -1.87471
+margin_top = 17.0
+margin_right = 3.12529
+margin_bottom = 37.0
+color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+margin_left = 14.0
+margin_top = -6.0
+margin_right = 17.0
+margin_bottom = -4.0
+color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="."]
+margin_left = 7.0
+margin_top = -7.0
+margin_right = 11.0
+margin_bottom = -4.0
+color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="."]
+margin_left = -14.3447
+margin_top = 6.33495
+margin_right = -12.3447
+margin_bottom = 9.33495
+color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="."]
+margin_left = -15.0
+margin_top = -5.0
+margin_right = -14.0
+margin_bottom = 8.0
+color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="."]
+margin_left = -15.0
+margin_top = -6.0
+margin_right = -1.0
+margin_bottom = -5.0
+color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="."]
+margin_left = 10.0
+margin_top = 7.0
+margin_right = 11.0
+margin_bottom = 11.0
+color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect13" type="ColorRect" parent="."]
+margin_left = 6.09333
+margin_top = 10.4702
+margin_right = 11.0933
+margin_bottom = 11.4702
+color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="timeout" from="Reload" to="." method="_on_Reload_timeout"]
