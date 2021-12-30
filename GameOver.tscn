@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
 [ext_resource path="res://cowboy.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://Pixel Cowboy.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://barrel.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
 
 [node name="GameOver" type="Node2D"]
 position = Vector2( 9.86987, 11.1273 )
@@ -19,35 +32,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="Background"]
-anchor_top = 0.00269254
-anchor_bottom = 0.00269254
-margin_left = 6.79626
-margin_top = -6.46865
-margin_right = 310.796
-margin_bottom = 71.5313
-rect_scale = Vector2( 0.5, 0.5 )
-custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-custom_fonts/font = ExtResource( 2 )
-text = "Game Over"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Label3" type="Label" parent="Background"]
 anchor_top = 0.00269254
 anchor_bottom = 0.00269254
-margin_left = 22.3769
-margin_top = 18.5989
-margin_right = 320.377
-margin_bottom = 96.5993
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = -139.0
+margin_top = -43.8567
+margin_right = 159.0
+margin_bottom = 34.1437
+rect_scale = Vector2( 1.5, 1.5 )
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
 text = "Score"
 align = 1
 valign = 1
@@ -58,14 +53,14 @@ __meta__ = {
 [node name="numfish" type="Label" parent="Background"]
 anchor_top = 0.00269254
 anchor_bottom = 0.00269254
-margin_left = 22.5116
-margin_top = 36.148
-margin_right = 320.512
-margin_bottom = 114.148
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = -139.0
+margin_top = -20.5457
+margin_right = 159.0
+margin_bottom = 57.4543
+rect_scale = Vector2( 1.5, 1.5 )
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "0"
 align = 1
 valign = 1
@@ -95,33 +90,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label5" type="Label" parent="Background"]
-anchor_top = 0.00269254
-anchor_bottom = 0.00269254
-margin_left = 17.035
-margin_top = 48.1628
-margin_right = 340.035
-margin_bottom = 193.163
-rect_scale = Vector2( 0.4, 0.4 )
-custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
-custom_constants/line_spacing = -20
-custom_fonts/font = ExtResource( 2 )
-text = "High
-Score"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="personal_best" type="Label" parent="Background" groups=["Persist"]]
 anchor_top = 0.00269254
 anchor_bottom = 0.00269254
-margin_left = 20.7238
-margin_top = 87.9959
-margin_right = 318.724
-margin_bottom = 165.996
+margin_left = 21.4657
+margin_top = 75.8791
+margin_right = 319.466
+margin_bottom = 153.879
 rect_scale = Vector2( 0.4, 0.4 )
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0.0941176, 0.12549, 1 )
@@ -147,3 +122,45 @@ texture = ExtResource( 4 )
 position = Vector2( 165.166, 89.2035 )
 scale = Vector2( 1.18743, 1.18743 )
 texture = ExtResource( 4 )
+
+[node name="HighScoreHeading" type="Label" parent="Background"]
+anchor_top = 0.00269254
+anchor_bottom = 0.00269254
+margin_left = -151.5
+margin_top = -42.3747
+margin_right = 171.5
+margin_bottom = 102.626
+rect_scale = Vector2( 1.5, 1.5 )
+custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
+custom_colors/font_outline_modulate = Color( 0.878431, 0.972549, 0.815686, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.972549, 0.815686, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = SubResource( 4 )
+text = "High Score"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighScoreHeading2" type="Label" parent="Background"]
+modulate = Color( 0.878431, 0.972549, 0.815686, 1 )
+self_modulate = Color( 0.878431, 0.972549, 0.815686, 1 )
+anchor_top = 0.00269254
+anchor_bottom = 0.00269254
+margin_left = -151.5
+margin_top = -42.6167
+margin_right = 171.5
+margin_bottom = 102.384
+rect_scale = Vector2( 1.5, 1.5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "High Score"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

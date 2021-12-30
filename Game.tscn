@@ -36,11 +36,11 @@ position = Vector2( 21.637, 111.32 )
 
 [node name="Score" type="Label" parent="Background/Background"]
 modulate = Color( 0.203922, 0.407843, 0.337255, 1 )
-margin_left = 4.15903
-margin_top = 1.02753
-margin_right = 71.159
-margin_bottom = 21.0275
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = 8.15903
+margin_top = 0.0275297
+margin_right = 75.159
+margin_bottom = 64.0275
+rect_scale = Vector2( 0.6, 0.6 )
 custom_fonts/font = ExtResource( 3 )
 text = "0"
 script = ExtResource( 5 )
@@ -50,11 +50,11 @@ __meta__ = {
 
 [node name="Time" type="Label" parent="Background/Background"]
 modulate = Color( 0.203922, 0.407843, 0.337255, 1 )
-margin_left = 120.006
-margin_top = 1.68887
-margin_right = 194.007
-margin_bottom = 65.6889
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = 107.006
+margin_top = 0.68887
+margin_right = 181.007
+margin_bottom = 64.6889
+rect_scale = Vector2( 0.6, 0.6 )
 custom_fonts/font = ExtResource( 3 )
 text = "0"
 align = 2

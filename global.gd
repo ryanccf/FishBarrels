@@ -4,6 +4,7 @@ var gametimer
 var remaining_fish = 0
 var fish = 0
 var time = 0
+var main_mute = false;
 
 func reset_fish():
 	fish = 0
@@ -31,3 +32,6 @@ func modify_remaining_fish(more_fish):
 
 func get_remaining_fish():
 	return remaining_fish
+
+func toggle_mute():
+	AudioServer.set_bus_mute(0, !AudioServer.is_bus_mute(AudioServer.get_bus_index("Master")))

@@ -17,7 +17,7 @@ func load_game_over():
 	screen.remove_child(self)
 	screen.add_child(gameover)
 	call_deferred("free")
-	
+
 func toggle_pause():
 	var tree = get_tree()
 	tree.paused = !tree.paused
@@ -25,3 +25,5 @@ func toggle_pause():
 func _process(_delta):
 	if Input.is_action_just_pressed("toggle_pause"):
 		toggle_pause()
+	if Input.is_action_just_pressed("select"):
+		global.toggle_mute()
